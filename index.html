@@ -4,6 +4,62 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>American Tourister India — Redesign Mockup</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What warranty do American Tourister bags come with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All American Tourister bags sold in India come with a 10-year manufacturer's warranty covering shell damage, wheel failure, handle breakage, and zipper defects. Register your bag at americantourister.in/warranty within 30 days of purchase. Claims are processed within 5–7 business days across 200+ service centers in India."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does American Tourister offer free delivery across India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. American Tourister offers free standard delivery on all orders pan-India with no minimum order value. Estimated delivery is 4–6 business days. Express delivery (1–2 days) is available for ₹149. All orders are fully tracked from dispatch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the Trento 55cm fit in IndiGo overhead bins?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Trento 55cm measures 55×35×25cm and weighs 2.8kg, within IndiGo's cabin bag allowance of 55×35×25cm and 7kg. It fits in the overhead bins on all IndiGo A320 and ATR-72 aircraft. It also meets Air India, Vistara, and SpiceJet cabin size requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size cabin bag is allowed on IndiGo flights?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IndiGo allows one cabin bag up to 55×35×25cm and 7kg. Most AT cabin bags including the Trento 55cm, Curio 55cm, and Linex Plus Cabin fit within these dimensions. Always check your specific airline's current policy before travel, as rules can change."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I return a bag if it doesn't meet my expectations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. American Tourister offers a 30-day no-questions return policy on all purchases from americantourister.in. The bag must be unused and in original packaging. Pickup is arranged at your doorstep. Refunds are processed within 5–7 business days to the original payment method."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I claim the 10-year warranty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Warranty claims can be raised online or at any of 200+ AT service centers in India. Online: visit americantourister.in/warranty, enter your product serial number and describe the issue. A service agent will contact you within 24 hours. Manufacturing defects are fully covered at no charge."
+      }
+    }
+  ]
+}
+</script>
 <style>
 :root{
   --n:#0B1F3A;--nm:#0F2A4F;--r:#E63024;--rd:#C42B1F;
@@ -341,6 +397,72 @@ body{
 .pmh{display:flex;align-items:center;gap:9px;padding:11px;cursor:pointer}
 .pmb{padding:0 11px 11px;display:none}
 .pm.on .pmb{display:block}
+/* FAQ */
+.faq-header{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:28px;flex-wrap:wrap
+}
+.faq-eyebrow{
+  font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--r);display:block;margin-bottom:5px
+}
+.faq-title{
+  font-size:24px;font-weight:500;color:var(--n);letter-spacing:-.025em;line-height:1.2
+}
+.faq-sub{font-size:12.5px;color:var(--sl);margin-top:5px}
+.faq-badge{
+  display:inline-flex;align-items:center;gap:5px;background:#E5F3EC;border:1px solid rgba(26,90,56,.18);
+  color:#1A5C38;font-size:10px;font-weight:500;padding:5px 11px;border-radius:99px;white-space:nowrap;margin-top:4px;flex-shrink:0
+}
+.faq-dot{width:6px;height:6px;border-radius:50%;background:#1A7A4A}
+.faq-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;border:.5px solid var(--bd);border-radius:12px;overflow:hidden;background:#fff
+}
+.faq-grid-single{
+  display:flex;flex-direction:column;border:.5px solid var(--bd);border-radius:12px;overflow:hidden;background:#fff
+}
+.faq-grid-single .faq-item{border-right:none!important}
+.faq-item{overflow:hidden;border-bottom:.5px solid var(--bd)}
+.faq-item:nth-child(odd){border-right:.5px solid var(--bd)}
+.faq-item:nth-last-child(-n+2){border-bottom:none}
+.faq-item:last-child{border-bottom:none}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;cursor:pointer;transition:background .15s;user-select:none
+}
+.faq-q:hover{background:rgba(11,31,58,.02)}
+.faq-q-text{font-size:13px;font-weight:500;color:var(--n);line-height:1.4;flex:1}
+.faq-chev{
+  width:20px;height:20px;border-radius:50%;background:var(--g1);display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:10px;color:var(--sl);transition:transform .22s,background .15s
+}
+.faq-item.open .faq-chev{transform:rotate(180deg);background:var(--n);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease,padding .2s}
+.faq-item.open .faq-a{max-height:320px;padding:0 18px 16px}
+.faq-a-inner{font-size:12.5px;color:var(--sl);line-height:1.78;padding-top:2px}
+.faq-a-inner strong{color:var(--n);font-weight:500}
+.faq-cta{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;color:var(--r);margin-top:9px;text-decoration:none;font-weight:500}
+.faq-cta:hover{text-decoration:underline}
+.faq-footer{
+  margin-top:18px;padding:14px 18px;background:var(--ow);border-radius:10px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px
+}
+.faq-footer-text{font-size:13px;color:var(--sl)}
+.cat-faq-wrap{background:var(--n);padding:44px 5%}
+.cat-faq-inner{display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:start}
+.cat-faq-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:6px;display:block}
+.cat-faq-title{font-size:19px;font-weight:500;color:#fff;letter-spacing:-.015em;line-height:1.3;margin-bottom:8px}
+.cat-faq-sub{font-size:11.5px;color:rgba(255,255,255,.38);line-height:1.65}
+.cat-faq-list{display:flex;flex-direction:column}
+.cat-faq-item{border-bottom:.5px solid rgba(255,255,255,.08);overflow:hidden}
+.cat-faq-item:last-child{border-bottom:none}
+.cat-faq-q{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;cursor:pointer;user-select:none}
+.cat-faq-q-text{font-size:12.5px;font-weight:500;color:#fff;flex:1}
+.cat-chev{
+  width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:rgba(255,255,255,.45);flex-shrink:0;transition:transform .22s,background .15s
+}
+.cat-faq-item.open .cat-chev{transform:rotate(180deg);background:var(--r);color:#fff}
+.cat-faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease}
+.cat-faq-item.open .cat-faq-a{max-height:200px;padding-bottom:13px}
+.cat-faq-a-inner{font-size:12px;color:rgba(255,255,255,.45);line-height:1.72}
+.cat-faq-a-inner strong{color:rgba(255,255,255,.8);font-weight:500}
 </style>
 
 <!-- DEMO BAR -->
@@ -759,6 +881,22 @@ body{
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px" id="rg"></div>
 </section>
 
+<section style="padding:56px 5%;background:#fff">
+  <div class="faq-header">
+    <div>
+      <span class="faq-eyebrow">Frequently Asked Questions</span>
+      <h2 class="faq-title">Everything travelers ask us</h2>
+      <p class="faq-sub">Answers to the most common questions about AT bags, warranty, and buying.</p>
+    </div>
+    <div class="faq-badge"><span class="faq-dot"></span> FAQPage Schema · AEO Optimised</div>
+  </div>
+  <div class="faq-grid" id="home-faq-grid"></div>
+  <div class="faq-footer">
+    <span class="faq-footer-text">Have a question we haven't answered?</span>
+    <button class="btn-ro">Chat with us on WhatsApp →</button>
+  </div>
+</section>
+
 <section style="background:var(--s);padding:36px 5%;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap">
   <div>
     <h3 style="font-size:18px;font-weight:500;color:var(--n);margin-bottom:3px;letter-spacing:-.015em">Pack smarter. Travel better.</h3>
@@ -788,6 +926,17 @@ body{
 <div class="pg3" style="padding:20px 5%;background:var(--ow)" id="cpg"></div>
 <div style="text-align:center;padding:20px 5%;background:var(--ow)">
   <button class="btn-n">Load More Products</button>
+</div>
+
+<div class="cat-faq-wrap">
+  <div class="cat-faq-inner">
+    <div>
+      <span class="cat-faq-label">AEO · FAQPage Schema</span>
+      <h2 class="cat-faq-title">Questions about cabin bags?</h2>
+      <p class="cat-faq-sub">Everything you need to know before buying — size rules, airline fit, features explained.</p>
+    </div>
+    <div class="cat-faq-list" id="cat-faq-list"></div>
+  </div>
 </div>
 </div>
 
@@ -891,6 +1040,18 @@ body{
   <div class="rsm" id="revsum"></div>
   <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px" id="rl"></div>
   <div style="text-align:center;margin-top:18px"><button class="btn-ro">See all 2,847 reviews</button></div>
+</section>
+
+<section style="padding:44px 5%;background:var(--ow)">
+  <div class="faq-header">
+    <div>
+      <span class="faq-eyebrow">Product FAQ</span>
+      <h2 class="faq-title">Questions about this bag</h2>
+      <p class="faq-sub">The most common questions buyers ask before purchasing the Trento 55cm.</p>
+    </div>
+    <div class="faq-badge"><span class="faq-dot"></span> FAQPage Schema · AI Extractable</div>
+  </div>
+  <div class="faq-grid-single" id="pdp-faq-grid"></div>
 </section>
 
 <!-- CROSS-SELL -->
@@ -1686,5 +1847,137 @@ function selPm(el){
   document.querySelectorAll('.pm').forEach(function(p){p.classList.remove('on')});
   el.classList.add('on');
 }
+
+var HOME_FAQS=[
+  {
+    q:'What warranty do American Tourister bags come with?',
+    a:'<strong>All American Tourister bags sold in India come with a 10-year manufacturer\\'s warranty.</strong> This covers shell damage, wheel failure, handle breakage, and zipper defects. Register your bag at americantourister.in/warranty within 30 days of purchase. Claims are processed within 5–7 business days across 200+ service centers in India.',
+    cta:'Register warranty'
+  },
+  {
+    q:'Does American Tourister offer free delivery across India?',
+    a:'<strong>Yes — free standard delivery on all orders pan-India with no minimum order value.</strong> Estimated delivery is 4–6 business days. Express delivery (1–2 days) is available for ₹149. All orders are fully tracked from dispatch.'
+  },
+  {
+    q:'Can I return a bag if it doesn\\'t meet my expectations?',
+    a:'<strong>Yes. American Tourister offers a 30-day no-questions return policy</strong> on all purchases from americantourister.in. The bag must be unused and in original packaging. Pickup is arranged at your doorstep. Refunds are processed within 5–7 business days to the original payment method.'
+  },
+  {
+    q:'Is Cash on Delivery (COD) available?',
+    a:'<strong>Yes, COD is available across most pin codes in India.</strong> A ₹49 handling fee applies on COD orders. You can verify COD availability for your pin code at checkout. COD orders are dispatched within 24 hours of placement.'
+  },
+  {
+    q:'What\\'s the difference between hard shell and soft shell luggage?',
+    a:'<strong>Hard shell bags offer superior protection for fragile items</strong> and are easier to clean. They resist crushing and maintain shape under airline baggage handling. Soft shell bags offer more flexibility for overpacking and often have external pockets. For Indian travel conditions — monsoon, rough handling — hard shell is generally recommended.',
+    cta:'Compare hard vs soft'
+  },
+  {
+    q:'How many American Tourister service centers are there in India?',
+    a:'<strong>American Tourister has 200+ authorized service centers across India</strong>, covering all major cities and tier-2 towns. Service is available in Mumbai, Delhi, Bengaluru, Hyderabad, Chennai, Pune, Kolkata, and 180+ additional locations.',
+    cta:'Find nearest center'
+  }
+];
+
+var CAT_FAQS=[
+  {
+    q:'What size cabin bag is allowed on IndiGo flights?',
+    a:'<strong>IndiGo allows one cabin bag up to 55×35×25cm and 7kg.</strong> Most AT cabin bags including the Trento 55cm, Curio 55cm, and Linex Plus Cabin fit within these dimensions. Always check your specific airline\\'s current policy before travel, as rules can change.'
+  },
+  {
+    q:'What\\'s the difference between 55cm and 68cm luggage?',
+    a:'<strong>55cm (40L) is a cabin bag — fits in overhead bins for trips up to 3 days.</strong> 68cm (70L) is a check-in bag for 4–7 day trips. If you travel frequently on domestic routes and want to avoid check-in queues, the 55cm is the right choice.'
+  },
+  {
+    q:'Is hard shell or soft shell better for Indian conditions?',
+    a:'<strong>Hard shell is recommended for most Indian travel conditions.</strong> It resists crushing under heavy baggage pile-ups, is waterproof for monsoon travel, and is easier to wipe clean. Soft shell offers more flexibility if you tend to overpack.'
+  },
+  {
+    q:'Which AT cabin bag is best for business travel?',
+    a:'<strong>The Trento Spinner 55cm and Starvibe Cabin are top-rated options for business travelers.</strong> Both fit in overhead bins, have a front-access feel for organized packing, TSA lock support, and a sharper profile for frequent work trips.'
+  },
+  {
+    q:'Can I take an AT cabin bag on Air Asia and SpiceJet?',
+    a:'<strong>Yes — AT 55cm cabin bags meet Air Asia and SpiceJet cabin requirements.</strong> When in doubt, compress the bag before boarding and avoid using the expansion zip on stricter budget carrier flights.'
+  }
+];
+
+var PDP_FAQS=[
+  {
+    q:'Does the Trento 55cm fit in IndiGo overhead bins?',
+    a:'<strong>Yes. The Trento 55cm measures 55×35×25cm and weighs 2.8kg</strong>, within IndiGo\\'s allowance of 55×35×25cm and 7kg. It also meets Air India, Vistara, and SpiceJet requirements.'
+  },
+  {
+    q:'What is the actual packing capacity of the 55cm bag?',
+    a:'<strong>The Trento 55cm has a usable packing capacity of 40 litres.</strong> With the expansion zip, this increases further. The dual-sided interior comfortably fits a 3-day domestic trip.'
+  },
+  {
+    q:'How do I set up the TSA combination lock?',
+    a:'<strong>The factory default combination is 0-0-0.</strong> Open with the default code, press and hold the reset button, dial your new 3-digit combination, then release. The lock is TSA approved.'
+  },
+  {
+    q:'Can I expand the bag for extra packing space?',
+    a:'<strong>Yes. The Trento 55cm has an expansion zip around the body.</strong> When expanded, the bag may exceed some airlines\\' strict size limits, so it\\'s best used for return journeys or surface travel.'
+  },
+  {
+    q:'How do I claim the 10-year warranty?',
+    a:'<strong>Claims can be raised online or at any of 200+ AT service centers in India.</strong> Visit americantourister.in/warranty, enter your serial number, and describe the issue. Manufacturing defects are fully covered at no charge.',
+    cta:'Claim warranty'
+  },
+  {
+    q:'What is the weight of the Trento 55cm?',
+    a:'<strong>The Trento 55cm weighs 2.8kg unladen.</strong> This gives you usable weight within IndiGo\\'s 7kg cabin allowance while keeping the shell rigid enough for frequent travel.'
+  },
+  {
+    q:'Is this bag good for a first-time international trip?',
+    a:'<strong>Yes — the Trento 55cm is a strong pick for first-time international travelers.</strong> The TSA lock satisfies international security requirements and the 55cm size works as cabin baggage on most international airlines.',
+    cta:'See international packing guide'
+  },
+  {
+    q:'What colors are available and which sells most?',
+    a:'<strong>The Trento 55cm is available in 6 colors: Midnight Navy, Racing Red, Stealth Black, Petrol Green, Deep Burgundy, and Desert Sand.</strong> Midnight Navy is the most popular seller in this mockup.'
+  }
+];
+
+function makeFaqItem(faq,container){
+  var ctaHtml=faq.cta?'<a class="faq-cta" href="#">'+faq.cta+' →</a>':'';
+  var div=document.createElement('div');
+  div.className='faq-item';
+  div.innerHTML=
+    '<div class="faq-q">'
+      +'<span class="faq-q-text">'+faq.q+'</span>'
+      +'<div class="faq-chev">▾</div>'
+    +'</div>'
+    +'<div class="faq-a"><div class="faq-a-inner">'+faq.a+ctaHtml+'</div></div>';
+  div.querySelector('.faq-q').addEventListener('click',function(){
+    var open=div.classList.contains('open');
+    container.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+    if(!open){div.classList.add('open')}
+  });
+  container.appendChild(div);
+}
+
+function makeCatFaqItem(faq,container){
+  var div=document.createElement('div');
+  div.className='cat-faq-item';
+  div.innerHTML=
+    '<div class="cat-faq-q">'
+      +'<span class="cat-faq-q-text">'+faq.q+'</span>'
+      +'<div class="cat-chev">▾</div>'
+    +'</div>'
+    +'<div class="cat-faq-a"><div class="cat-faq-a-inner">'+faq.a+'</div></div>';
+  div.querySelector('.cat-faq-q').addEventListener('click',function(){
+    var open=div.classList.contains('open');
+    container.querySelectorAll('.cat-faq-item').forEach(function(i){i.classList.remove('open')});
+    if(!open){div.classList.add('open')}
+  });
+  container.appendChild(div);
+}
+
+var homeFaqGrid=document.getElementById('home-faq-grid');
+HOME_FAQS.forEach(function(f){makeFaqItem(f,homeFaqGrid)});
+var catFaqList=document.getElementById('cat-faq-list');
+CAT_FAQS.forEach(function(f){makeCatFaqItem(f,catFaqList)});
+var pdpFaqGrid=document.getElementById('pdp-faq-grid');
+PDP_FAQS.forEach(function(f){makeFaqItem(f,pdpFaqGrid)});
 </script>
 </html>
