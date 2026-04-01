@@ -510,383 +510,433 @@ body{
     <h2 class="st">Why travelers choose AT</h2>
     <p class="ss">Not just luggage. A decade of engineering behind every trip.</p>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px" id="fgrid"></div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px" id="fgd"></div>
 </section>
 
-<section class="cspot">
-  <div style="position:relative;z-index:2;max-width:420px">
-    <span class="ey" style="color:#FF7264">Limited Collection</span>
-    <h2 class="st lt" style="margin-bottom:8px">AT × Masaba<br>for journeys that stand out.</h2>
-    <p style="font-size:13px;color:rgba(255,255,255,.52);line-height:1.75;margin-bottom:22px">Playful Indian prints. Same AT toughness. Designed to be noticed from Terminal 1 to Terminal global.</p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <button class="btn-r">Explore Collection</button>
-      <button class="btn-w">Watch Launch Film</button>
-    </div>
-  </div>
-  <img src="images/AT_Masaba1.png" alt="AT x Masaba luggage collection campaign visual" style="position:relative;z-index:2">
-</section>
+<section class="cspot" id="cspot"></section>
 
 <section class="section" style="background:#fff">
-  <div class="shr">
-    <div>
-      <span class="ey">Pack Better</span>
-      <h2 class="st">By the journey you’re planning</h2>
-    </div>
+  <div style="text-align:center;margin-bottom:20px">
+    <span class="ey">50,000+ Travelers</span>
+    <h2 class="st">From our community</h2>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px" id="jg"></div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:24px" id="sstats"></div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px" id="rg"></div>
 </section>
 
-<footer class="footer" id="footer"></footer>
+<section style="background:var(--s);padding:36px 5%;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap">
+  <div>
+    <h3 style="font-size:18px;font-weight:500;color:var(--n);margin-bottom:3px;letter-spacing:-.015em">Pack smarter. Travel better.</h3>
+    <p style="font-size:12px;color:var(--sl)">Get ₹300 off your first order + exclusive travel tips from AT community.</p>
+  </div>
+  <div style="display:flex;gap:7px;flex-wrap:wrap">
+    <input class="fi" style="width:230px" placeholder="Your email address" type="email"/>
+    <button class="btn-n">Claim Offer</button>
+  </div>
+</section>
+
+<footer class="footer" id="ft"></footer>
 </div>
 
 <!-- ══════════════════════ PAGE: CATEGORY ══════════════════════ -->
 <div id="pg-cat" class="page">
-<div style="padding:18px 5% 14px;background:#fff;border-bottom:.5px solid var(--bd)">
-  <div style="font-size:11px;color:var(--sl);margin-bottom:6px">Home / Luggage / Cabin Bags</div>
-  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px">
-    <div>
-      <h1 style="font-size:34px;font-weight:500;color:var(--n);line-height:1.05;letter-spacing:-.03em">Cabin Bags</h1>
-      <p style="font-size:12px;color:var(--sl);margin-top:4px">For 1–3 day escapes, business travel, and every airport sprint in between.</p>
-    </div>
-    <div id="fbar" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end"></div>
-  </div>
+<div style="background:var(--n);padding:26px 5%">
+  <div style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:4px">Luggage › Cabin Bags</div>
+  <h1 style="font-size:26px;font-weight:500;color:#fff;letter-spacing:-.025em;margin-bottom:3px">Cabin Bags</h1>
+  <p style="color:rgba(255,255,255,.45);font-size:12px">Carry-on approved. Overhead-bin perfect. From ₹2,999.</p>
 </div>
-
-<div style="display:grid;grid-template-columns:220px 1fr;gap:22px;padding:20px 5%;background:var(--ow)">
-  <aside style="align-self:start;position:sticky;top:92px">
-    <div style="background:#fff;border:.5px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:10px">
-      <div style="font-size:12px;font-weight:500;color:var(--n);margin-bottom:8px">Sort by</div>
-      <select class="fi"><option>Best selling</option><option>Price low to high</option><option>Price high to low</option><option>Newest first</option><option>Rating</option></select>
-    </div>
-    <div style="background:#fff;border:.5px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:10px">
-      <div style="font-size:12px;font-weight:500;color:var(--n);margin-bottom:8px">Trip Duration</div>
-      <div style="display:flex;flex-direction:column;gap:6px">
-        <label style="font-size:11.5px;color:var(--sl)"><input type="checkbox"> 1–3 Days</label>
-        <label style="font-size:11.5px;color:var(--sl)"><input type="checkbox"> 4–7 Days</label>
-        <label style="font-size:11.5px;color:var(--sl)"><input type="checkbox"> 7+ Days</label>
-      </div>
-    </div>
-    <div style="background:#fff;border:.5px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:10px">
-      <div style="font-size:12px;font-weight:500;color:var(--n);margin-bottom:8px">Material</div>
-      <div style="display:flex;flex-direction:column;gap:6px">
-        <label style="font-size:11.5px;color:var(--sl)"><input type="checkbox"> Hard Shell</label>
-        <label style="font-size:11.5px;color:var(--sl)"><input type="checkbox"> Soft Shell</label>
-        <label style="font-size:11.5px;color:var(--sl)"><input type="checkbox"> Polycarbonate</label>
-        <label style="font-size:11.5px;color:var(--sl)"><input type="checkbox"> Polypropylene</label>
-      </div>
-    </div>
-    <div style="background:#fff;border:.5px solid var(--bd);border-radius:12px;padding:14px">
-      <div style="font-size:12px;font-weight:500;color:var(--n);margin-bottom:8px">Price</div>
-      <div style="height:3px;background:var(--g2);border-radius:2px;position:relative;margin:12px 4px">
-        <div style="position:absolute;left:18%;right:22%;top:0;height:100%;background:var(--r)"></div>
-      </div>
-      <div style="display:flex;justify-content:space-between;font-size:10.5px;color:var(--sl)">
-        <span>₹2,999</span><span>₹9,999</span>
-      </div>
-    </div>
-  </aside>
-  <main>
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-      <div style="font-size:12px;color:var(--sl)">24 products</div>
-      <div style="font-size:12px;color:var(--sl)">Showing 1–24</div>
-    </div>
-    <div class="pg3" id="cpg"></div>
-  </main>
+<div style="background:#fff;padding:10px 5%;border-bottom:.5px solid var(--bd);display:flex;align-items:center;gap:7px;flex-wrap:wrap" id="fbar"></div>
+<div style="padding:8px 5%;display:flex;justify-content:space-between;align-items:center;background:var(--ow);border-bottom:.5px solid var(--bd)">
+  <span style="font-size:11px;color:var(--sl)">Showing 24 cabin bags</span>
+  <select class="fi" style="width:auto;padding:5px 10px"><option>Sort: Bestselling</option><option>Price: Low to High</option><option>Highest Rated</option><option>Newest First</option></select>
+</div>
+<div class="pg3" style="padding:20px 5%;background:var(--ow)" id="cpg"></div>
+<div style="text-align:center;padding:20px 5%;background:var(--ow)">
+  <button class="btn-n">Load More Products</button>
 </div>
 </div>
 
 <!-- ══════════════════════ PAGE: PDP ══════════════════════ -->
 <div id="pg-pdp" class="page">
-<div style="padding:14px 5%;font-size:11px;color:var(--sl);background:#fff;border-bottom:.5px solid var(--bd)">Home / Luggage / Cabin Bags / <span id="pdp-breadcrumb-name">Trento Spinner 55 cm</span></div>
 
-<div style="padding:24px 5%;background:#fff">
-  <div class="pdpg">
-    <div>
-      <div style="display:grid;grid-template-columns:70px 1fr;gap:12px">
-        <div id="thumbs" style="display:flex;flex-direction:column;gap:8px"></div>
-        <div>
-          <div id="mainimg" class="mainzoom" onclick="openPdpZoom()" style="width:100%;height:380px;background:var(--ow);border-radius:13px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px"></div>
-          <div style="display:flex;justify-content:space-between;font-size:10.5px;color:var(--sl)">
-            <span>Click image to zoom</span>
-            <span>6 images</span>
-          </div>
-        </div>
-      </div>
+<div style="padding:9px 5%;background:var(--ow);border-bottom:.5px solid var(--bd);font-size:11px;color:var(--sl);display:flex;gap:5px">
+  <a href="#" style="color:var(--sl);text-decoration:none">Home</a> ›
+  <a href="#" style="color:var(--sl);text-decoration:none">Luggage</a> ›
+  <a href="#" style="color:var(--sl);text-decoration:none">Cabin</a> ›
+  <span style="color:var(--n)" id="pdp-breadcrumb-name">Trento Spinner 55 cm</span>
+</div>
 
-      <div style="margin-top:30px;padding:18px;background:var(--ow);border-radius:14px;border:.5px solid var(--bd)">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap">
-          <div>
-            <div style="font-size:11px;color:var(--sl);margin-bottom:3px">Complete the look</div>
-            <div style="font-size:16px;font-weight:500;color:var(--n)">Trento 55cm + 68cm</div>
-            <div style="font-size:11.5px;color:var(--sl);margin-top:4px">Bundle both sizes in matching navy and save ₹1,000.</div>
-          </div>
-          <button class="btn-ro">Add Both</button>
-        </div>
-        <div id="bndlvis" style="display:flex;align-items:flex-end;gap:12px;margin-top:16px"></div>
-      </div>
+<div style="padding:20px 5%;background:#fff">
+<div class="pdpg">
+
+  <!-- GALLERY -->
+  <div style="position:sticky;top:95px">
+    <div id="mainimg" class="mainzoom" onclick="openPdpZoom()" style="width:100%;height:380px;background:var(--ow);border-radius:13px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px"></div>
+    <div style="display:flex;gap:6px" id="thumbs"></div>
+  </div>
+
+  <!-- PANEL -->
+  <div>
+    <div id="pdp-kicker" style="font-size:10px;color:var(--r);font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px">Hard Luggage · Cabin · 4-Wheel Spinner</div>
+    <div id="pdp-name" style="font-size:21px;font-weight:500;color:var(--n);letter-spacing:-.015em;margin-bottom:7px;line-height:1.2">Trento Spinner 55 cm</div>
+    <div style="display:flex;align-items:center;gap:7px;margin-bottom:13px">
+      <span style="color:#F5A623;font-size:11px;letter-spacing:-1px">★★★★★</span>
+      <span style="font-size:12px;font-weight:500">4.8</span>
+      <a href="#" style="font-size:11px;color:var(--sl);text-decoration:none;border-bottom:1px solid var(--g2)">2,847 reviews</a>
+      <span style="font-size:9.5px;background:#E5F3EC;color:#1A7A4A;padding:2px 6px;border-radius:4px;font-weight:500">Bestseller</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:17px;padding-bottom:17px;border-bottom:.5px solid var(--bd)">
+      <span id="pdp-price" style="font-size:25px;font-weight:500;letter-spacing:-.025em">₹6,075</span>
+      <span id="pdp-mrp" style="font-size:14px;color:var(--g4);text-decoration:line-through">₹8,100</span>
+      <span id="pdp-off" style="background:#E5F3EC;color:#1A7A4A;font-size:11px;font-weight:500;padding:2px 7px;border-radius:4px">25% off</span>
+      <span style="font-size:11px;color:var(--sl)">Incl. GST</span>
     </div>
 
-    <div style="position:sticky;top:92px;align-self:start">
-      <div id="pdp-kicker" style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--r);margin-bottom:8px">Hard Luggage · Cabin · 4-Wheel Spinner</div>
-      <h1 id="pdp-name" style="font-size:34px;font-weight:500;color:var(--n);line-height:1.06;letter-spacing:-.03em;margin-bottom:10px">Trento Spinner 55 cm</h1>
-      <div style="display:flex;align-items:flex-end;gap:8px;margin-bottom:9px">
-        <div id="pdp-price" style="font-size:28px;font-weight:500;color:var(--n);letter-spacing:-.03em">₹6,075</div>
-        <div id="pdp-mrp" style="font-size:14px;color:var(--g4);text-decoration:line-through;padding-bottom:3px">₹8,100</div>
-        <div id="pdp-off" style="font-size:12px;color:#1A7A4A;font-weight:500;padding-bottom:3px">25% off</div>
-      </div>
-      <div class="rsm" style="padding:10px 12px;margin:0 0 14px">
-        <div style="display:flex;align-items:center;gap:7px"><span class="stars" style="font-size:14px">★★★★★</span><span style="font-size:11px;color:var(--sl)">4.8 (2,847)</span></div>
-        <div style="font-size:11px;color:var(--sl);border-left:.5px solid var(--bd);padding-left:14px">98% recommend</div>
-      </div>
+    <span style="font-size:10px;font-weight:500;color:var(--n);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;display:block">Colour — <span id="cname" style="text-transform:none;font-weight:400;color:var(--sl)">Midnight Navy</span></span>
+    <div style="display:flex;gap:7px;margin-bottom:17px" id="cswatches"></div>
 
-      <div class="ptrust">
-        <div class="pti"><div style="font-size:10px;color:var(--sl);line-height:1.3">10-Year<br>Warranty</div></div>
-        <div class="pti"><div style="font-size:10px;color:var(--sl);line-height:1.3">Free<br>Shipping</div></div>
-        <div class="pti"><div style="font-size:10px;color:var(--sl);line-height:1.3">7-Day<br>Return</div></div>
-      </div>
+    <span style="font-size:10px;font-weight:500;color:var(--n);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;display:block">Size</span>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:17px">
+      <div class="sopt on" data-size="55cm" onclick="selSz(this)"><span style="font-size:11.5px;font-weight:500;color:var(--n);display:block">55cm</span><span style="font-size:10px;color:var(--sl);display:block;margin-top:1px">Cabin · 40L</span><span style="font-size:10px;color:var(--sl);display:block">Packs for 1–3 days</span></div>
+      <div class="sopt" data-size="68cm" onclick="selSz(this)"><span style="font-size:11.5px;font-weight:500;color:var(--n);display:block">68cm</span><span style="font-size:10px;color:var(--sl);display:block;margin-top:1px">Check-In · 70L</span><span style="font-size:10px;color:var(--sl);display:block">Packs for 4–7 days</span></div>
+      <div class="sopt" data-size="76cm" onclick="selSz(this)"><span style="font-size:11.5px;font-weight:500;color:var(--n);display:block">76cm</span><span style="font-size:10px;color:var(--sl);display:block;margin-top:1px">Large · 110L</span><span style="font-size:10px;color:var(--sl);display:block">Packs for 7+ days</span></div>
+    </div>
 
-      <div style="margin-bottom:14px">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px">
-          <div style="font-size:11.5px;font-weight:500;color:var(--n)">Color</div>
-          <div id="cname" style="font-size:11px;color:var(--sl)">Midnight Navy</div>
-        </div>
-        <div id="cswatches" style="display:flex;gap:8px"></div>
-      </div>
+    <div class="ptrust">
+      <div class="pti"><span style="font-size:14px;display:block;margin-bottom:1px">🛡</span><div style="font-size:9px;color:var(--sl);line-height:1.3">10-Year<br>Warranty</div></div>
+      <div class="pti"><span style="font-size:14px;display:block;margin-bottom:1px">🚚</span><div style="font-size:9px;color:var(--sl);line-height:1.3">Free<br>Delivery</div></div>
+      <div class="pti"><span style="font-size:14px;display:block;margin-bottom:1px">↩️</span><div style="font-size:9px;color:var(--sl);line-height:1.3">30-Day<br>Returns</div></div>
+      <div class="pti"><span style="font-size:14px;display:block;margin-bottom:1px">💵</span><div style="font-size:9px;color:var(--sl);line-height:1.3">COD<br>Available</div></div>
+    </div>
 
-      <div style="margin-bottom:16px">
-        <div style="font-size:11.5px;font-weight:500;color:var(--n);margin-bottom:7px">Choose size</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px">
-          <div class="sopt on" data-size="55cm" onclick="selSz(this)">
-            <div style="font-size:13px;font-weight:500;color:var(--n)">55cm</div>
-            <div style="font-size:10.5px;color:var(--sl);margin-top:2px">Cabin</div>
-            <div style="font-size:9.5px;color:var(--g4);margin-top:4px">Packs for 1–3 days</div>
-          </div>
-          <div class="sopt" data-size="68cm" onclick="selSz(this)">
-            <div style="font-size:13px;font-weight:500;color:var(--n)">68cm</div>
-            <div style="font-size:10.5px;color:var(--sl);margin-top:2px">Check-In</div>
-            <div style="font-size:9.5px;color:var(--g4);margin-top:4px">Packs for 4–7 days</div>
-          </div>
-          <div class="sopt" data-size="76cm" onclick="selSz(this)">
-            <div style="font-size:13px;font-weight:500;color:var(--n)">76cm</div>
-            <div style="font-size:10.5px;color:var(--sl);margin-top:2px">Large</div>
-            <div style="font-size:9.5px;color:var(--g4);margin-top:4px">Packs for 7+ days</div>
-          </div>
-        </div>
-      </div>
+    <button id="pdp-add-btn" style="width:100%;background:var(--r);color:#fff;font-size:14px;font-weight:500;padding:14px;border:none;border-radius:9px;cursor:pointer;margin-bottom:8px;font-family:inherit;letter-spacing:.01em" onclick="addCurrentToCart()" onmouseover="this.style.background='#C42B1F'" onmouseout="this.style.background='var(--r)'">Add to Bag</button>
+    <button style="width:100%;background:var(--n);color:#fff;font-size:14px;font-weight:500;padding:14px;border:none;border-radius:9px;cursor:pointer;font-family:inherit" onclick="showPage('ck',3)" onmouseover="this.style.background='#0F2A4F'" onmouseout="this.style.background='var(--n)'">Buy Now</button>
 
-      <button class="btn-r" style="width:100%;justify-content:center;margin-bottom:9px" onclick="addCurrentToCart()">Add to Bag — ₹6,075</button>
-      <button class="btn-ro" style="width:100%">Buy it with 3 EMIs of ₹2,025</button>
-
-      <div style="margin-top:18px;border-top:.5px solid var(--bd);padding-top:16px;display:flex;flex-direction:column;gap:8px">
-        <details open><summary style="font-size:12px;font-weight:500;cursor:pointer">Specifications</summary><div style="font-size:11.5px;color:var(--sl);padding-top:8px;line-height:1.75">55 × 39.5 × 21 cm · Polycarbonate shell · Shock Lock spinner wheels · Integrated TSA lock · 34L · 2.8kg.</div></details>
-        <details><summary style="font-size:12px;font-weight:500;cursor:pointer">Shipping & returns</summary><div style="font-size:11.5px;color:var(--sl);padding-top:8px;line-height:1.75">Ships in 24 hrs. Free delivery across India. 7-day return on unused products with original packaging.</div></details>
-        <details><summary style="font-size:12px;font-weight:500;cursor:pointer">Warranty</summary><div style="font-size:11.5px;color:var(--sl);padding-top:8px;line-height:1.75">10-year manufacturing warranty covering shell, wheel system, and handle defects.</div></details>
-      </div>
+    <div style="font-size:11px;color:var(--r);font-weight:500;margin-top:10px;display:flex;align-items:center;gap:5px">
+      <span class="pd"></span> Only 6 left in Midnight Navy — order soon
+    </div>
+    <div style="margin-top:12px;padding:10px 12px;background:var(--ow);border-radius:7px;font-size:11.5px;color:var(--sl);display:flex;gap:7px;align-items:center">
+      <span style="color:#25D366;font-size:14px">💬</span>
+      <span>Questions? Chat on <strong style="color:var(--n)">WhatsApp</strong> · Replies in under 2 min</span>
     </div>
   </div>
 </div>
+</div>
 
-<div style="background:var(--ow);padding:0 5%">
+<!-- FEATURE MODULES -->
+<section style="padding:40px 5%;background:var(--ow)">
+  <div style="text-align:center;margin-bottom:6px">
+    <span class="ey">What's Inside</span>
+    <h2 class="st">Built for how you travel</h2>
+  </div>
   <div id="fmods"></div>
-</div>
+</section>
 
-<div style="padding:34px 5%;background:#fff">
-  <div class="shr" style="margin-bottom:16px">
-    <div><span class="ey">Compare Smartly</span><h2 class="st">How Trento stacks up</h2></div>
-  </div>
-  <div style="overflow:auto;border:.5px solid var(--bd);border-radius:14px">
-    <table style="width:100%;border-collapse:collapse;background:#fff;min-width:700px">
-      <thead>
-        <tr style="background:var(--ow)">
-          <th style="text-align:left;padding:12px 13px;font-size:11px;color:var(--sl);font-weight:500">Feature</th>
-          <th style="text-align:left;padding:12px 13px;font-size:12px;color:var(--n);font-weight:600">Trento Spinner 55cm</th>
-          <th style="text-align:left;padding:12px 13px;font-size:12px;color:var(--sl);font-weight:500">Circurity + Spinner 57cm</th>
-          <th style="text-align:left;padding:12px 13px;font-size:12px;color:var(--sl);font-weight:500">Airconic 2.0 Spinner 55 cm</th>
-        </tr>
-      </thead>
-      <tbody id="cmptbl"></tbody>
-    </table>
-  </div>
-</div>
+<!-- COMPARISON -->
+<section style="padding:40px 5%;background:#fff">
+  <span class="ey">Compare</span>
+  <h2 class="st">How does it stack up?</h2>
+  <table style="width:100%;border-collapse:collapse;margin-top:20px;font-size:12.5px">
+    <thead>
+      <tr>
+        <th style="background:var(--n);color:#fff;padding:10px 13px;font-size:11.5px;font-weight:500;text-align:left">Feature</th>
+        <th style="background:var(--r);color:#fff;padding:10px 13px;font-size:11.5px;font-weight:500;text-align:left">Trento Spinner 55cm</th>
+        <th style="background:var(--n);color:#fff;padding:10px 13px;font-size:11.5px;font-weight:500;text-align:left">Circurity + Spinner 57cm</th>
+        <th style="background:var(--n);color:#fff;padding:10px 13px;font-size:11.5px;font-weight:500;text-align:left">Airconic 2.0 Spinner 55 cm</th>
+      </tr>
+    </thead>
+    <tbody id="cmptbl"></tbody>
+  </table>
+</section>
 
-<div style="padding:34px 5%;background:var(--ow)">
-  <div class="shr" style="margin-bottom:16px">
-    <div><span class="ey">Loved by Travelers</span><h2 class="st">Reviews that matter</h2></div>
-    <button class="btn-ro">Write a review</button>
-  </div>
+<!-- REVIEWS -->
+<section style="padding:40px 5%;background:var(--ow)" id="revs">
+  <span class="ey">Reviews</span>
+  <h2 class="st">What travelers are saying</h2>
   <div class="rsm" id="revsum"></div>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px" id="rl"></div>
-</div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px" id="rl"></div>
+  <div style="text-align:center;margin-top:18px"><button class="btn-ro">See all 2,847 reviews</button></div>
+</section>
 
-<div style="padding:34px 5%;background:#fff">
-  <div class="shr" style="margin-bottom:16px">
-    <div><span class="ey">Often Added</span><h2 class="st">Complete your trip</h2></div>
+<!-- CROSS-SELL -->
+<section style="padding:40px 5%;background:#fff">
+  <span class="ey">Complete the Set</span>
+  <h2 class="st">Pack the full setup</h2>
+  <div style="background:var(--ow);border-radius:13px;padding:16px;margin-top:18px;margin-bottom:16px;display:flex;gap:12px;align-items:center;border:1.5px solid var(--r)">
+    <div id="bndlvis" style="display:flex;gap:8px;align-items:center;flex-shrink:0"></div>
+    <div style="flex:1">
+      <div style="font-size:9.5px;color:var(--r);font-weight:500;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Bundle Offer</div>
+      <div style="font-size:14.5px;font-weight:500;color:var(--n);margin-bottom:2px">Cabin + Check-In Set</div>
+      <div style="font-size:11.5px;color:var(--sl)">Trento 55cm + 68cm</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:6px">
+        <span style="font-size:16px;font-weight:500;color:var(--n)">₹9,499</span>
+        <span style="font-size:12px;color:var(--g4);text-decoration:line-through">₹11,998</span>
+        <span style="font-size:11px;background:#E5F3EC;color:#1A7A4A;padding:2px 7px;border-radius:4px">Save ₹2,499</span>
+      </div>
+    </div>
+    <button class="btn-r" style="flex-shrink:0">Add Bundle →</button>
   </div>
   <div class="pg4" id="xsg"></div>
-</div>
+</section>
 
-<div style="position:sticky;bottom:0;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-top:.5px solid var(--bd);padding:10px 5%;display:flex;justify-content:space-between;align-items:center;gap:14px;z-index:400">
-  <div>
-    <div id="sticky-pdp-name" style="font-size:12px;font-weight:500;color:var(--n)">Trento Spinner 55 cm · Midnight Navy</div>
-    <div style="display:flex;gap:6px;align-items:center"><span id="sticky-pdp-price" style="font-size:16px;font-weight:500;color:var(--n)">₹6,075</span><span id="sticky-pdp-mrp" style="font-size:11px;color:var(--g4);text-decoration:line-through">₹8,100</span></div>
+<!-- STICKY ATC -->
+<div style="background:var(--n);padding:11px 5%;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.08)">
+  <div style="flex:1">
+    <div id="sticky-pdp-name" style="color:rgba(255,255,255,.65);font-size:11px">Trento Spinner 55 cm · Midnight Navy</div>
+    <div style="color:#fff;font-size:15.5px;font-weight:500"><span id="sticky-pdp-price">₹6,075</span> <span id="sticky-pdp-mrp" style="font-size:12px;color:rgba(255,255,255,.4);text-decoration:line-through;font-weight:400">₹8,100</span></div>
   </div>
-  <button class="btn-r" onclick="addCurrentToCart()">Add to Bag</button>
+  <button id="sticky-add-btn" style="background:var(--r);color:#fff;font-size:12px;font-weight:500;padding:9px 18px;border:none;border-radius:7px;cursor:pointer;font-family:inherit" onclick="addCurrentToCart()">Add to Bag</button>
+  <button style="background:rgba(255,255,255,.1);color:#fff;font-size:12px;font-weight:500;padding:9px 18px;border:none;border-radius:7px;cursor:pointer;font-family:inherit" onclick="showPage('ck',3)">Buy Now</button>
 </div>
 </div>
 
 <!-- ══════════════════════ PAGE: CHECKOUT ══════════════════════ -->
 <div id="pg-ck" class="page">
+
 <div class="ckhead">
-  <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:#fff;font-weight:500">
-    <img src="https://americantourister.in/cdn/shop/files/615-2023_03_31-AT_Logo_200x50__1.webp?v=1742636999&width=280" alt="American Tourister" style="height:20px;width:auto;display:block">
+  <a class="logo" href="#" onclick="showPage('home',0);return false" aria-label="American Tourister home">
+    <img src="https://americantourister.in/cdn/shop/files/615-2023_03_31-AT_Logo_200x50__1.webp?v=1742636999&width=280" alt="American Tourister">
+  </a>
+  <div style="display:flex;align-items:center">
+    <div style="display:flex;align-items:center;gap:6px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.45)">
+      <div style="width:18px;height:18px;border-radius:50%;background:#1A7A4A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500">✓</div> Cart
+    </div>
+    <div style="width:24px;height:1px;background:rgba(255,255,255,.1)"></div>
+    <div style="display:flex;align-items:center;gap:6px;padding:4px 12px;font-size:11px;color:#fff">
+      <div style="width:18px;height:18px;border-radius:50%;background:var(--r);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500">2</div> Details
+    </div>
+    <div style="width:24px;height:1px;background:rgba(255,255,255,.1)"></div>
+    <div style="display:flex;align-items:center;gap:6px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.35)">
+      <div style="width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.1);color:rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500">3</div> Payment
+    </div>
   </div>
-  <div style="font-size:11px;color:rgba(255,255,255,.5)">Secure Checkout</div>
+  <div style="width:180px"></div>
 </div>
 
-<div class="ckwrap" style="background:var(--ow)">
-  <div style="padding:24px 5% 32px 5%">
-    <div style="font-size:28px;font-weight:500;color:var(--n);line-height:1.06;letter-spacing:-.03em;margin-bottom:16px">Checkout</div>
+<div class="ckwrap">
+<div style="padding:22px 5%;background:var(--ow)">
 
-    <div class="cksec">
-      <div style="font-size:12px;font-weight:500;color:var(--n);margin-bottom:12px">Contact</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
-        <input class="fi" placeholder="First name"><input class="fi" placeholder="Last name">
+  <div class="cksec">
+    <div style="font-size:14px;font-weight:500;color:var(--n);margin-bottom:13px">Contact information</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px">
+      <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">Mobile number</label>
+        <input class="fi f" value="+91 98765 43210" type="tel"/>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-        <input class="fi" placeholder="Email"><input class="fi" placeholder="Phone number">
+      <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">Email address</label>
+        <input class="fi" placeholder="your@email.com" type="email"/>
       </div>
-    </div>
-
-    <div class="cksec">
-      <div style="font-size:12px;font-weight:500;color:var(--n);margin-bottom:12px">Delivery address</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
-        <input class="fi" placeholder="Pincode"><input class="fi" placeholder="City">
-      </div>
-      <input class="fi" placeholder="Address line 1" style="margin-bottom:8px">
-      <input class="fi" placeholder="Apartment, suite, landmark (optional)" style="margin-bottom:8px">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><input class="fi" placeholder="State"><input class="fi" placeholder="Country"></div>
-    </div>
-
-    <div class="cksec">
-      <div style="font-size:12px;font-weight:500;color:var(--n);margin-bottom:12px">Delivery method</div>
-      <div class="dlopt on" onclick="selDl(this)" style="margin-bottom:8px"><div class="dlrad"></div><div style="flex:1"><div style="font-size:11.5px;font-weight:500;color:var(--n)">Express Delivery</div><div style="font-size:10.5px;color:var(--sl)">Get it by Tue, 14 Jan</div></div><div style="font-size:12px;font-weight:500;color:var(--n)">Free</div></div>
-      <div class="dlopt" onclick="selDl(this)"><div class="dlrad"></div><div style="flex:1"><div style="font-size:11.5px;font-weight:500;color:var(--n)">Standard Delivery</div><div style="font-size:10.5px;color:var(--sl)">Get it by Thu, 16 Jan</div></div><div style="font-size:12px;font-weight:500;color:var(--n)">Free</div></div>
-    </div>
-
-    <div class="cksec">
-      <div style="font-size:12px;font-weight:500;color:var(--n);margin-bottom:12px">Payment</div>
-      <div class="pm on" onclick="selPm(this)">
-        <div class="pmh"><div style="font-size:15px">💳</div><div style="font-size:11.5px;font-weight:500;color:var(--n)">Credit / Debit Card</div></div>
-        <div class="pmb">
-          <input class="fi f" placeholder="Card number" style="margin-bottom:8px">
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px"><input class="fi f" placeholder="MM/YY"><input class="fi f" placeholder="CVV"><input class="fi f" placeholder="Name on card"></div>
-        </div>
-      </div>
-      <div class="pm" onclick="selPm(this)"><div class="pmh"><div style="font-size:15px">📱</div><div style="font-size:11.5px;font-weight:500;color:var(--n)">UPI</div></div></div>
-      <div class="pm" onclick="selPm(this)"><div class="pmh"><div style="font-size:15px">🏦</div><div style="font-size:11.5px;font-weight:500;color:var(--n)">Net Banking</div></div></div>
-      <div class="pm" onclick="selPm(this)"><div class="pmh"><div style="font-size:15px">📦</div><div style="font-size:11.5px;font-weight:500;color:var(--n)">Cash on Delivery</div></div></div>
     </div>
   </div>
 
-  <aside style="padding:24px 5% 32px 0">
-    <div style="position:sticky;top:76px">
-      <div class="cksec" style="margin-bottom:12px">
-        <div class="perkcard" id="checkout-perks" style="margin-bottom:14px">
-          <div class="perkmsg" id="checkout-perk-msg">Congratulations, you have unlocked <strong>FLAT500</strong>.</div>
-          <div class="perksub" id="checkout-perk-sub">Free delivery and 5% OFF are already active on this cart.</div>
-          <div class="perkbar">
-            <div class="perkfill" id="checkout-perk-fill" style="width:100%"></div>
-          </div>
-          <div class="perkpts">
-            <div class="perkpt on" id="checkout-perk-free">
-              <div class="perkdot">✓</div>
-              <div class="perklabel">FREE DELIVERY</div>
-            </div>
-            <div class="perkpt on" id="checkout-perk-discount">
-              <div class="perkdot">%</div>
-              <div class="perklabel">5% OFF</div>
-            </div>
-            <div class="perkpt on" id="checkout-perk-flat">
-              <div class="perkdot">₹</div>
-              <div class="perklabel">FLAT500</div>
-            </div>
-          </div>
-        </div>
-        <div style="font-size:12px;font-weight:500;color:var(--n);margin-bottom:12px">Order summary</div>
-        <div style="display:flex;gap:10px;padding-bottom:14px;border-bottom:.5px solid var(--bd);margin-bottom:14px">
-          <div id="ckimg" style="width:58px;height:68px;background:var(--ow);border-radius:10px;display:flex;align-items:center;justify-content:center"></div>
-          <div style="flex:1">
-            <div id="checkout-name" style="font-size:12px;font-weight:500;color:var(--n)">Trento Spinner</div>
-            <div id="checkout-variant" style="font-size:10.5px;color:var(--sl);margin-top:2px">55cm · Midnight Navy</div>
-          </div>
-          <div id="checkout-item-price" style="font-size:12px;font-weight:500;color:var(--n)">₹6,075</div>
-        </div>
-
-        <div style="display:flex;gap:8px;margin-bottom:14px"><input class="fi f" placeholder="Gift card / discount code"><button class="btn-n" style="padding-inline:14px">Apply</button></div>
-
-        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--sl);margin-bottom:6px"><span>MRP</span><span id="checkout-mrp">₹8,100</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:11px;color:#1A7A4A;margin-bottom:6px"><span>Savings</span><span id="checkout-savings">−₹2,025</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--sl);margin-bottom:6px"><span>Subtotal</span><span id="checkout-subtotal">₹6,075</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--sl);margin-bottom:6px"><span>Shipping</span><span>Free</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--sl);margin-bottom:12px"><span>Estimated delivery</span><span>2–4 days</span></div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:.5px solid var(--bd)"><span style="font-size:13px;font-weight:500;color:var(--n)">Total</span><span id="checkout-total" style="font-size:22px;font-weight:500;color:var(--n);letter-spacing:-.03em">₹6,075</span></div>
-        <button class="btn-r" id="place-order-btn" style="width:100%;justify-content:center;margin-top:14px">Place Order — ₹6,075 →</button>
-        <div style="font-size:10px;color:var(--sl);text-align:center;margin-top:10px">You save <span id="checkout-saving-highlight" style="color:#1A7A4A;font-weight:500">₹2,025</span> on this order</div>
+  <div class="cksec">
+    <div style="font-size:14px;font-weight:500;color:var(--n);margin-bottom:13px">Shipping address</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px">
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">First name</label>
+        <input class="fi f" value="Rohit" type="text"/>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">Last name</label>
+        <input class="fi f" value="Sharma" type="text"/>
+      </div>
+      <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">Address</label>
+        <input class="fi" placeholder="Flat/House no., Street name" type="text"/>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">City</label>
+        <input class="fi f" value="Mumbai" type="text"/>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">PIN Code</label>
+        <input class="fi" placeholder="400001" type="text" maxlength="6"/>
+      </div>
+      <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">State</label>
+        <select class="fi"><option>Maharashtra</option><option>Karnataka</option><option>Delhi</option><option>Tamil Nadu</option><option>Gujarat</option></select>
       </div>
     </div>
-  </aside>
+  </div>
+
+  <div class="cksec">
+    <div style="font-size:14px;font-weight:500;color:var(--n);margin-bottom:13px">Delivery</div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <div class="dlopt on">
+        <div class="dlrad"></div>
+        <div style="flex:1"><div style="font-size:12.5px;font-weight:500;color:var(--n)">Standard Delivery</div><div style="font-size:11px;color:var(--sl)">Delivered in 4–6 business days · Tracked</div></div>
+        <span style="font-size:12.5px;font-weight:500;color:#1A7A4A">FREE</span>
+      </div>
+      <div class="dlopt" onclick="selDl(this)">
+        <div class="dlrad"></div>
+        <div style="flex:1"><div style="font-size:12.5px;font-weight:500;color:var(--n)">Express Delivery</div><div style="font-size:11px;color:var(--sl)">Delivered in 1–2 business days · Tracked</div></div>
+        <span style="font-size:12.5px;font-weight:500;color:var(--n)">₹149</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cksec">
+    <div style="font-size:14px;font-weight:500;color:var(--n);margin-bottom:13px">Payment method</div>
+    <div class="pm on">
+      <div class="pmh">
+        <div style="width:32px;height:20px;background:#EEF4FF;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#2563EB;flex-shrink:0">UPI</div>
+        <span style="font-size:12.5px;font-weight:500;color:var(--n);flex:1">UPI</span>
+        <span style="font-size:9px;background:#E5F3EC;color:#1A7A4A;padding:2px 6px;border-radius:3px">Instant · Recommended</span>
+      </div>
+      <div class="pmb">
+        <input class="fi" placeholder="Enter UPI ID (e.g. name@okaxis)" style="margin-bottom:8px" type="text"/>
+        <div style="display:flex;gap:7px;flex-wrap:wrap">
+          <div style="padding:5px 11px;border:1px solid var(--bd);border-radius:5px;font-size:11.5px;cursor:pointer;color:var(--sl)">PhonePe</div>
+          <div style="padding:5px 11px;border:1px solid var(--bd);border-radius:5px;font-size:11.5px;cursor:pointer;color:var(--sl)">Google Pay</div>
+          <div style="padding:5px 11px;border:1px solid var(--bd);border-radius:5px;font-size:11.5px;cursor:pointer;color:var(--sl)">Paytm</div>
+        </div>
+      </div>
+    </div>
+    <div class="pm" onclick="selPm(this)">
+      <div class="pmh">
+        <div style="width:32px;height:20px;background:var(--g1);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:8.5px;font-weight:600;color:var(--sl);flex-shrink:0">CARD</div>
+        <span style="font-size:12.5px;font-weight:500;color:var(--n);flex:1">Credit / Debit Card</span>
+        <span style="font-size:10.5px;color:var(--sl)">EMI available on ₹5,000+</span>
+      </div>
+    </div>
+    <div class="pm" onclick="selPm(this)">
+      <div class="pmh">
+        <div style="width:32px;height:20px;background:#FFF8E7;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:8.5px;font-weight:700;color:#BA7517;flex-shrink:0">COD</div>
+        <span style="font-size:12.5px;font-weight:500;color:var(--n);flex:1">Cash on Delivery</span>
+        <span style="font-size:10.5px;color:var(--sl)">₹49 handling fee</span>
+      </div>
+    </div>
+    <div class="pm" onclick="selPm(this)">
+      <div class="pmh">
+        <div style="width:32px;height:20px;background:var(--g1);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:8.5px;font-weight:600;color:var(--sl);flex-shrink:0">NET</div>
+        <span style="font-size:12.5px;font-weight:500;color:var(--n)">Net Banking</span>
+      </div>
+    </div>
+  </div>
+
+  <button id="place-order-btn" style="width:100%;background:var(--r);color:#fff;font-size:14.5px;font-weight:500;padding:15px;border:none;border-radius:9px;cursor:pointer;font-family:inherit;letter-spacing:.01em" onmouseover="this.style.background='#C42B1F'" onmouseout="this.style.background='var(--r)'">
+    Place Order — ₹6,075 →
+  </button>
+  <div style="text-align:center;margin-top:10px;font-size:10.5px;color:var(--sl)">
+    🔒 Secured by Razorpay &nbsp;·&nbsp; ✓ SSL Encrypted &nbsp;·&nbsp; 🛡 100% Purchase Protection
+  </div>
+</div>
+
+<!-- ORDER SUMMARY -->
+<div style="background:#fff;padding:20px;border-left:.5px solid var(--bd)">
+  <div style="font-size:14px;font-weight:500;color:var(--n);margin-bottom:13px;padding-bottom:11px;border-bottom:.5px solid var(--bd)">
+    Order Summary <span style="font-size:11.5px;color:var(--sl);font-weight:400">(1 item)</span>
+  </div>
+  <div class="perkcard" id="checkout-perks" style="background:var(--ow)">
+    <div class="perkmsg" id="checkout-perk-msg">YOU ARE <strong>₹1,924</strong> AWAY FROM FLAT500.</div>
+    <div class="perksub" id="checkout-perk-sub">Congratulations, you have unlocked 5% OFF.</div>
+    <div class="perkbar">
+      <div class="perkfill" id="checkout-perk-fill" style="width:76%"></div>
+    </div>
+    <div class="perkpts">
+      <div class="perkpt on" id="checkout-perk-free">
+        <div class="perkdot">✓</div>
+        <div class="perklabel">FREE DELIVERY</div>
+      </div>
+      <div class="perkpt on" id="checkout-perk-discount">
+        <div class="perkdot">%</div>
+        <div class="perklabel">5% OFF</div>
+      </div>
+      <div class="perkpt" id="checkout-perk-flat">
+        <div class="perkdot">₹</div>
+        <div class="perklabel">FLAT500</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;padding-bottom:12px;border-bottom:.5px solid var(--bd)">
+    <div id="ckimg" style="width:56px;height:56px;background:var(--g1);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden"></div>
+    <div style="flex:1">
+      <div id="checkout-name" style="font-size:12.5px;font-weight:500;color:var(--n);margin-bottom:1px">Trento Spinner</div>
+      <div id="checkout-variant" style="font-size:11px;color:var(--sl)">55cm · Midnight Navy</div>
+      <div style="font-size:11px;color:var(--sl);margin-top:2px">Qty: 1</div>
+    </div>
+    <div id="checkout-item-price" style="font-size:13.5px;font-weight:500;color:var(--n)">₹6,075</div>
+  </div>
+  <div style="margin-bottom:12px">
+    <div style="font-size:11px;color:var(--sl);margin-bottom:7px">Have a promo code?</div>
+    <div style="display:flex;gap:7px">
+      <input class="fi" placeholder="Enter code (e.g. SAVE300)" type="text" style="font-size:12px"/>
+      <button style="background:var(--ow);border:1px solid var(--bd);border-radius:6px;padding:8px 12px;font-size:11.5px;font-weight:500;color:var(--n);cursor:pointer;font-family:inherit;white-space:nowrap">Apply</button>
+    </div>
+  </div>
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px;color:var(--sl)"><span>Subtotal</span><span id="checkout-subtotal">₹6,075</span></div>
+    <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px;color:var(--sl)"><span>MRP Total</span><span id="checkout-mrp" style="text-decoration:line-through;color:var(--g4)">₹8,100</span></div>
+    <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px;color:#1A7A4A"><span>Your Savings</span><span id="checkout-savings">−₹2,025</span></div>
+    <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px;color:var(--sl)"><span>Delivery</span><span style="color:#1A7A4A">FREE</span></div>
+    <div style="display:flex;justify-content:space-between;font-size:15px;font-weight:500;color:var(--n);padding-top:9px;border-top:.5px solid var(--bd);margin-top:3px"><span>Total</span><span id="checkout-total">₹6,075</span></div>
+  </div>
+  <div style="background:#E5F3EC;border-radius:7px;padding:9px 11px;font-size:11.5px;color:#1A7A4A;margin-bottom:12px;display:flex;gap:5px;align-items:center">
+    🎉 <span>You're saving <strong id="checkout-saving-highlight">₹2,025</strong> on this order!</span>
+  </div>
+  <div style="font-size:11px;color:var(--sl);line-height:1.8">
+    🛡 <strong style="color:var(--n)">10-Year Warranty</strong> included<br>
+    ↩️ Free returns within 30 days<br>
+    🚚 Estimated delivery: 4–6 business days
+  </div>
+</div>
 </div>
 </div>
 
 <script>
-// PAGE SWITCHER
-function showPage(id,idx){
-  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('on')});
-  document.getElementById('pg-'+id).classList.add('on');
-  document.querySelectorAll('.dbtn').forEach(function(b){b.classList.remove('on')});
-  document.getElementById('d'+idx).classList.add('on');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
+var N='#0B1F3A',R='#E63024',TEAL='#0E7E74',BURG='#8B1A32',BLK='#1A1A1A',PUR='#5B3B8C',SAND='#8B7355',PINK='#C2196B';
+var cartItems=[];
 
-// SVG SUITCASE GENERATOR
-function bag(color,w,h,acc){
-  acc=acc||'#222';
+function bag(c,w,h){
+  w=w||80;h=h||96;
   return '<svg width="'+w+'" height="'+h+'" viewBox="0 0 80 98" fill="none">'
     +'<rect x="24" y="1" width="32" height="10" rx="4" fill="rgba(0,0,0,.22)"/>'
     +'<rect x="31" y="0" width="7" height="13" rx="3" fill="rgba(0,0,0,.18)"/>'
     +'<rect x="42" y="0" width="7" height="13" rx="3" fill="rgba(0,0,0,.18)"/>'
-    +'<rect x="6" y="12" width="68" height="78" rx="9" fill="'+color+'"/>'
-    +'<path d="M16 26C24 20 34 20 42 26C50 32 60 32 66 28" stroke="rgba(255,255,255,.24)" stroke-width="1.8" stroke-linecap="round"/>'
-    +'<path d="M16 40C24 34 34 34 42 40C50 46 60 46 66 42" stroke="rgba(255,255,255,.18)" stroke-width="1.8" stroke-linecap="round"/>'
-    +'<path d="M16 54C24 48 34 48 42 54C50 60 60 60 66 56" stroke="rgba(255,255,255,.13)" stroke-width="1.8" stroke-linecap="round"/>'
-    +'<path d="M16 68C24 62 34 62 42 68C50 74 60 74 66 70" stroke="rgba(255,255,255,.09)" stroke-width="1.8" stroke-linecap="round"/>'
+    +'<rect x="6" y="12" width="68" height="78" rx="9" fill="'+c+'"/>'
     +'<rect x="6" y="49" width="68" height="2.5" fill="rgba(0,0,0,.12)"/>'
     +'<rect x="34" y="39" width="12" height="9" rx="2" fill="rgba(0,0,0,.2)"/>'
-    +'<circle cx="18" cy="93" r="4.4" fill="'+acc+'"/>'
-    +'<circle cx="62" cy="93" r="4.4" fill="'+acc+'"/>'
+    +'<ellipse cx="18" cy="95" rx="8" ry="5" fill="#080808" opacity=".38"/>'
+    +'<ellipse cx="62" cy="95" rx="8" ry="5" fill="#080808" opacity=".38"/>'
     +'</svg>';
 }
 
-// PALETTE
-var N='#193C73',R='#D43A34',TEAL='#12828A',BLK='#23262D',BURG='#6B1530',SAND='#B3926C',PUR='#5E4B8B';
+// PAGE SWITCHER
+function showPage(id,idx){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('on')});
+  document.getElementById('pg-'+id).classList.add('on');
+  document.querySelectorAll('.dbtn').forEach(function(b,i){b.classList.toggle('on',i===idx)});
+  window.scrollTo(0,0);
+  var nav=document.getElementById('sitenav');
+  if(id==='ck'){nav.style.display='none'}else{nav.style.display='flex'}
+  closeCart();
+}
 
 // TRUST BAR
-document.getElementById('tbar').innerHTML=[
-  ['✓','10-Year Warranty'],['⭑','Tested for 32 checks'],['↺','7-Day Easy Return'],['⚡','Ships in 24 hrs'],['◎','50M+ travelers']
-].map(function(t){return '<div class="ti"><span>'+t[0]+'</span><span>'+t[1]+'</span></div>'}).join('');
-
-// CAT TILES
-var ct=[
-  {k:'ct1',ttl:'Cabin Bags',sub:'Made for quick getaways',from:'From ₹4,499',img:'images/Cabin.png'},
-  {k:'ct2',ttl:'Check-In Bags',sub:'For longer journeys',from:'From ₹5,999',img:'images/Gemini_Generated_Image_qw456aqw456aqw45.png'},
-  {k:'ct3',ttl:'Luggage Sets',sub:'The power pair',from:'From ₹9,999',img:'images/LuggageSet.png'}
+var tItems=[
+  ['🛡','10-Year Warranty'],['🚚','Free Delivery Pan-India'],
+  ['↩️','30-Day Returns'],['★','Rated 4.8 by 50K+'],['💵','COD Available']
 ];
-document.getElementById('ctg').innerHTML=ct.map(function(c){
-  return '<div class="ct '+c.k+'" onclick="showPage(\'cat\',1)">'+
-    '<img class="ctimg" src="'+c.img+'" alt="'+c.ttl+'">'+
-    '<div class="ct-bdg">'+c.from+'</div>'+
-    '<div class="ct-c"><h3>'+c.ttl+'</h3><p>'+c.sub+'</p></div></div>'
-}).join('');
+var tb=document.getElementById('tbar');
+tItems.forEach(function(t){
+  tb.innerHTML+='<div style="display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.72);font-size:11px"><span>'+t[0]+'</span>'+t[1]+'</div>'
+});
+
+// CATEGORY TILES
+var ctData=[
+  {cls:'ct1',bdg:'From ₹2,999',col:N,ttl:'Cabin Bags',sub:'Carry-on approved, domestic & intl.',sc:80,sh:96,img:'images/Cabin.png'},
+  {cls:'ct2',bdg:'From ₹4,499',col:PUR,ttl:'Check-In Bags',sub:'Medium & large for longer journeys',sc:72,sh:110,img:'images/Gemini_Generated_Image_qw456aqw456aqw45.png'},
+  {cls:'ct3',bdg:'Save up to 20%',col:TEAL,ttl:'Luggage Sets',sub:'Cabin + check-in, perfectly matched',sc:64,sh:90,img:'images/LuggageSet.png'}
+];
+var ctg=document.getElementById('ctg');
+ctData.forEach(function(d,i){
+  ctg.innerHTML+='<div class="ct '+d.cls+'" onclick="showPage(\'cat\',1)">'
+    +(d.img?'<img class="ctimg" src="'+d.img+'" alt="'+d.ttl+'">':'')
+    +'<span class="ct-bdg">'+d.bdg+'</span>'
+    +'<div class="ct-c"><h3>'+d.ttl+'</h3><p>'+d.sub+'</p><span>Explore →</span></div>'
+    +'</div>'
+});
 
 // PRODUCTS DATA
 var PRODS=[
@@ -909,46 +959,76 @@ function makeCard(p,onclick){
     +'<div class="pinfo">'
     +'<div class="pname">'+p.nm+'</div>'
     +'<div class="pmeta">'+p.mt+'</div>'
-    +(p.rt?'<div class="prat"><span class="stars">★★★★★</span><span class="rc">'+p.rt+'</span></div>':'<div class="prat"><span class="stars">★★★★★</span><span style="font-size:11px;font-weight:500">4.8</span><span class="rc">(1.2k)</span></div>')
+    +'<div class="prat"><span class="stars">★★★★★</span><span style="font-size:11px;font-weight:500">4.8</span><span class="rc">(1.2k)</span></div>'
     +'<div class="swatches">'+swHtml+'</div>'
     +'<div class="ppr"><span class="sp">'+p.pr+'</span>'+metaPrice+'</div>'
     +'<button class="batc">Add to Bag</button>'
     +'</div></div>'
 }
 
-// HOMEPAGE BESTSELLERS
-var bests=[
-  {nm:'Airconic 2.0',mt:'55cm · Smart Cabin · Hard Shell',pr:'₹4,899',mr:'₹8,100',off:'40%',c:N,bdg:'Bestseller',bc:'#E63024',rt:'268 reviews',cols:[N,BLK,TEAL],img:'images/bestseller.webp'},
-  {nm:'Trento 8W',mt:'68cm · Check-in · Hard Shell',pr:'₹7,500',mr:'₹11,500',off:'35%',c:BLK,bdg:'Top Rated',bc:'#0B1F3A',rt:'354 reviews',cols:[BLK,N,BURG],img:'images/TopRated.webp'},
-  {nm:'Bern Spinner 60 cm',mt:'60cm · Cabin · Soft Shell',pr:'₹5,999',mr:'₹7,999',off:'25%',c:TEAL,bdg:'New',bc:'#1A7A4A',rt:'127 reviews',cols:[TEAL,SAND,N],img:'images/New.webp'},
-  {nm:'AT × Masaba Set',mt:'Cabin + Medium · Limited Print',pr:'₹10,499',mr:'₹13,999',off:'25%',c:'#85A8E0',bdg:'Collab',bc:'#7A4B0A',rt:'89 reviews',cols:['#85A8E0','#F4B7D6'],img:'images/AT_Masaba.png'}
-];
-document.getElementById('bsg').innerHTML=bests.map(function(p,i){return makeCard(p,i===0?"showPage('pdp',2)":null)}).join('');
+// BESTSELLERS
+var bsg=document.getElementById('bsg');
+PRODS.forEach(function(p){bsg.innerHTML+=makeCard(p,"showPage('pdp',2)")});
 
 // FEATURES
-document.getElementById('fgrid').innerHTML=[
-  ['🛞','360° Wheels','Glide through every terminal'],
-  ['🛡','10-Year Promise','Built to go the distance'],
-  ['🔒','TSA Lock','Stress-free airport security'],
-  ['⚙','Light yet tough','Engineered shell strength']
-].map(function(f){
-  return '<div class="fcard"><div class="fiw">'+f[0]+'</div><div style="font-size:15px;font-weight:500;color:var(--n);margin-bottom:4px">'+f[1]+'</div><div style="font-size:12px;color:var(--sl)">'+f[2]+'</div></div>'
-}).join('');
+var fData=[
+  {ic:'⚙️',tt:'360° Silent Wheels',ds:'Japanese Hinomoto spinners tested for 10,000+ rotations. Glide on airport marble, cobblestones, or rough roads — completely silent.'},
+  {ic:'🛡',tt:'10-Year Warranty',ds:'Industry-best coverage. Shell crack, zipper failure, or wheel damage within 10 years — we repair or replace it. No questions, no receipts.'},
+  {ic:'✈️',tt:'TSA-Ready Design',ds:'All cabin sizes meet DGCA & major airline dimensions. Integrated TSA combination lock on all variants. Packs smarter than it looks.'}
+];
+var fgd=document.getElementById('fgd');
+fData.forEach(function(f){
+  fgd.innerHTML+='<div style="background:#fff;border-radius:12px;padding:20px">'
+    +'<div style="width:44px;height:44px;background:var(--n);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px">'+f.ic+'</div>'
+    +'<div style="font-size:14px;font-weight:500;color:var(--n);margin-bottom:4px">'+f.tt+'</div>'
+    +'<div style="font-size:12.5px;color:var(--sl);line-height:1.65">'+f.ds+'</div>'
+    +'</div>'
+});
 
-// JOURNEY GRID
-document.getElementById('jg').innerHTML=[
-  ['Weekend Escape','2–3 days','Carry-on heroes',N],
-  ['Business Travel','Laptop-friendly','Sleek and sharp',BLK],
-  ['Family Trip','Extra packing room','Sets + check-ins',BURG],
-  ['International','Long-haul ready','Tested tough',TEAL]
-].map(function(j){
-  return '<div style="background:#fff;border:.5px solid var(--bd);border-radius:14px;padding:18px;min-height:152px;display:flex;flex-direction:column;justify-content:space-between">'
-    +'<div style="font-size:34px">'+bag(j[3],34,40)+'</div>'
-    +'<div><div style="font-size:15px;font-weight:500;color:var(--n)">'+j[0]+'</div><div style="font-size:11px;color:var(--sl)">'+j[1]+' · '+j[2]+'</div></div></div>'
-}).join('');
+// COLLECTION SPOTLIGHT
+var cspot=document.getElementById('cspot');
+cspot.innerHTML='<div style="position:absolute;right:-50px;top:-50px;width:280px;height:280px;background:rgba(230,48,36,.07);border-radius:50%"></div>'
+  +'<div style="flex:1;position:relative;z-index:2">'
+  +'<span style="display:inline-block;background:rgba(245,236,215,.1);border:1px solid rgba(245,236,215,.2);color:var(--s);font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;margin-bottom:13px">Limited Collection</span>'
+  +'<h2 style="color:#fff;font-size:26px;font-weight:500;letter-spacing:-.025em;margin-bottom:8px;line-height:1.2">AT × Lovechild<br>by Masaba</h2>'
+  +'<p style="color:rgba(255,255,255,.5);font-size:13px;margin-bottom:20px;line-height:1.7;max-width:340px">Bold prints. Vibrant personality. The same 10-year AT durability underneath — now in limited-edition designs by Masaba Gupta.</p>'
+  +'<div style="display:flex;gap:10px;flex-wrap:wrap">'
+  +'<button class="btn-r">Shop Collection →</button>'
+  +'<button class="btn-w">Watch the Campaign</button>'
+  +'</div></div>'
+  +'<div style="flex-shrink:0;position:relative;z-index:2">'
+  +'<img src="images/AT_Masaba1.png" alt="AT x Masaba limited collection campaign visual">'
+  +'</div>';
+
+// STATS
+var stats=[['4.8★','Avg. product rating'],['50K+','Verified reviews'],['10 yrs','Best-in-class warranty'],['85%','Repurchase rate']];
+var sr=document.getElementById('sstats');
+stats.forEach(function(s){
+  sr.innerHTML+='<div style="text-align:center;padding:16px 10px;border:.5px solid var(--bd);border-radius:12px;background:var(--ow)">'
+    +'<div style="font-size:22px;font-weight:500;color:var(--n);letter-spacing:-.025em">'+s[0]+'</div>'
+    +'<div style="font-size:11px;color:var(--sl);margin-top:2px;line-height:1.4">'+s[1]+'</div>'
+    +'</div>'
+});
+
+// REVIEWS
+var revs=[
+  {nm:'Priya M., Mumbai',st:5,tx:'"Travelled to 6 countries in 2 years with this bag. Not a single scratch. The wheels are still as smooth as day one. Worth every rupee."',pd:'Polaris 55cm · Midnight Navy'},
+  {nm:'Rahul K., Hyderabad',st:5,tx:'"Bought the set for our family Europe trip. Loved how it looked on the carousel — turned heads at Zurich. Plus everything fit perfectly."',pd:'Linex Plus Set · Teal'},
+  {nm:'Ananya S., Bengaluru',st:5,tx:'"The 10-year warranty is real. My zipper broke in year 3. AT sent a replacement in 48 hrs. That\'s why I\'ll only buy American Tourister."',pd:'Starvibe 79cm · Black'}
+];
+var rg=document.getElementById('rg');
+revs.forEach(function(rv){
+  rg.innerHTML+='<div style="border:.5px solid var(--bd);border-radius:12px;padding:15px">'
+    +'<div style="color:#F5A623;font-size:11px;margin-bottom:6px">★★★★★</div>'
+    +'<p style="font-size:12.5px;color:var(--sl);line-height:1.65;margin-bottom:8px;font-style:italic">'+rv.tx+'</p>'
+    +'<div style="font-size:12px;font-weight:500;color:var(--n)">'+rv.nm+'</div>'
+    +'<div style="font-size:10.5px;color:var(--sl);margin-top:1px">'+rv.pd+'</div>'
+    +'</div>'
+});
 
 // FOOTER
-document.getElementById('footer').innerHTML='<div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px;margin-bottom:22px">'
+var ft=document.getElementById('ft');
+ft.innerHTML='<div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px;margin-bottom:22px">'
   +'<div><h3 style="color:#fff;font-size:15.5px;font-weight:500;margin-bottom:7px">American<b style="color:var(--r);font-weight:500">Tourister</b></h3>'
   +'<p style="font-size:11px;line-height:1.7;color:rgba(255,255,255,.38);margin-bottom:11px">Built for the way India travels. Trusted by 50M+ travelers globally.</p>'
   +'<div style="display:flex;gap:7px">'+['in','ig','yt','fb'].map(function(s){return '<a href="#" style="width:28px;height:28px;background:rgba(255,255,255,.07);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:rgba(255,255,255,.45);text-decoration:none">'+s+'</a>'}).join('')+'</div></div>'
