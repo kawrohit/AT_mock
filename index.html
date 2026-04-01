@@ -66,19 +66,39 @@ body{
   font-size:12px;transition:background .15s,color .15s
 }
 .navdd a:hover{background:var(--ow);color:var(--r)}
-.navdd.tree{min-width:320px;padding:10px 0;max-height:70vh;overflow:auto}
-.navgrp{padding:6px 0;border-top:1px solid rgba(11,31,58,.08)}
-.navgrp:first-child{border-top:none}
-.navhub{
-  display:block;padding:8px 16px;color:var(--n);text-decoration:none;font-size:12px;
-  font-weight:600;transition:background .15s,color .15s
+.navdd.mega{
+  width:min(920px,calc(100vw - 10vw));padding:18px;max-height:76vh;overflow:auto
 }
-.navhub:hover{background:var(--ow);color:var(--r)}
-.navsub{
-  display:block;padding:6px 16px 6px 30px;color:var(--sl);text-decoration:none;font-size:11.5px;
-  transition:background .15s,color .15s
+.navgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 22px}
+.navsec{min-width:0}
+.navttl{
+  display:flex;align-items:center;gap:10px;font-size:10px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--sl);margin-bottom:9px
 }
-.navsub:hover{background:var(--ow);color:var(--r)}
+.navttl::after{content:'';flex:1;height:1px;background:rgba(11,31,58,.1)}
+.navlist{display:flex;flex-wrap:wrap;gap:8px}
+.navdd .navpill,.navdd .navbranch{
+  display:inline-flex;align-items:center;padding:8px 12px;border:1px solid rgba(11,31,58,.18);
+  border-radius:999px;background:#fff;color:var(--n);text-decoration:none;font-size:12px;line-height:1.2
+}
+.navdd .navpill:hover,.navdd .navbranch:hover{background:var(--ow);color:var(--r);border-color:rgba(230,48,36,.28)}
+.navstack{display:flex;flex-direction:column;gap:8px}
+.navbranchwrap{position:relative}
+.navdd .navbranch{width:100%;justify-content:space-between;border-radius:12px;padding:10px 12px}
+.navdd .navbranch::after{content:'›';font-size:14px;color:var(--sl)}
+.navsubdd{
+  position:absolute;top:0;left:calc(100% + 10px);min-width:240px;background:#fff;border:1px solid var(--bd);
+  border-radius:14px;padding:10px;box-shadow:var(--shadow);opacity:0;visibility:hidden;
+  transform:translateX(8px);transition:all .18s ease;z-index:12
+}
+.navsubdd::before{content:'';position:absolute;top:0;bottom:0;left:-12px;width:12px}
+.navbranchwrap:hover>.navsubdd,.navbranchwrap:focus-within>.navsubdd{
+  opacity:1;visibility:visible;transform:translateX(0)
+}
+.navsubdd a{
+  display:block;padding:8px 10px;color:var(--n);text-decoration:none;font-size:12px;border-radius:10px
+}
+.navsubdd a:hover{background:var(--ow);color:var(--r)}
 .navicons{display:flex;align-items:center;gap:13px;margin-left:auto}
 .navic{color:rgba(255,255,255,.75);font-size:15px;cursor:pointer;text-decoration:none;position:relative}
 .cc{position:absolute;top:-6px;right:-6px;background:var(--r);color:#fff;
@@ -340,77 +360,292 @@ body{
   </a>
   <ul class="navul">
     <li class="navitem">
-      <a href="#" class="navlink cur">Shop Luggage</a>
-      <div class="navdd">
-        <a href="#">Cabin / Carry-On</a>
-        <a href="#">Check-In (M/L)</a>
-        <a href="#">Luggage Sets</a>
-        <a href="#">Hard Shell</a>
-        <a href="#">Soft Shell</a>
-      </div>
-    </li>
-    <li class="navitem">
-      <a href="#" class="navlink">By Journey</a>
-      <div class="navdd">
-        <a href="#">Weekend Escape</a>
-        <a href="#">Business Travel</a>
-        <a href="#">Family Trip</a>
-        <a href="#">International</a>
-        <a href="#">Study Abroad</a>
-      </div>
-    </li>
-    <li class="navitem">
-      <a href="#" class="navlink">Collections</a>
-      <div class="navdd">
-        <a href="#">New Arrivals</a>
-        <a href="#">Bestsellers</a>
-        <a href="#">Collab Editions</a>
-        <a href="#">Bags &amp; Packs</a>
-        <a href="#">Kids Collection</a>
-      </div>
-    </li>
-    <li class="navitem">
-      <a href="#" class="navlink">Travel World</a>
-      <div class="navdd tree">
-        <a href="/travel-world/" class="navhub">Travel World</a>
-        <div class="navgrp">
-          <a href="/travel-world/packing-guides/" class="navhub">Packing Guides</a>
-          <a href="/packing-guides/cabin-bag/" class="navsub">How To Pack A Cabin Bag</a>
-          <a href="/packing-guides/international/" class="navsub">International Trip Packing List</a>
-          <a href="/packing-guides/business-trip/" class="navsub">Business Travel Packing</a>
-          <a href="/packing-guides/family-trip/" class="navsub">Family Vacation Packing List India</a>
-        </div>
-        <div class="navgrp">
-          <a href="/travel-world/luggage-guides/" class="navhub">Luggage Guides</a>
-          <a href="/luggage-guides/cabin-size-rules/" class="navsub">Cabin Bag Size Rules India Airlines</a>
-          <a href="/luggage-guides/hard-vs-soft/" class="navsub">Hard Vs Soft Luggage</a>
-          <a href="/luggage-guides/best-cabin-bags-india/" class="navsub">Best Cabin Bags India</a>
-          <a href="/luggage-guides/how-to-choose-luggage/" class="navsub">How To Choose The Right Luggage</a>
-        </div>
-        <div class="navgrp">
-          <a href="/travel-world/destination-guides/" class="navhub">Destination Guides</a>
-          <a href="/destination-guides/goa/" class="navsub">What To Pack For Goa</a>
-          <a href="/destination-guides/europe/" class="navsub">Packing List Europe Trip From India</a>
-          <a href="/destination-guides/manali/" class="navsub">What To Carry For Manali Trip</a>
-          <a href="/destination-guides/bali/" class="navsub">Packing List Bali</a>
-        </div>
-        <div class="navgrp">
-          <a href="/travel-world/travel-tips/" class="navhub">Travel Tips</a>
-          <a href="/travel-tips/airport-hacks/" class="navsub">Airport Tips India</a>
-          <a href="/travel-tips/airline-rules/" class="navsub">Indigo SpiceJet Luggage Allowance Rules</a>
-          <a href="/travel-tips/first-time-flyer/" class="navsub">First Time Flying India Checklist</a>
-          <a href="/travel-tips/frequent-flyer/" class="navsub">Frequent Traveller Tips India</a>
+      <a href="/luggage/" class="navlink cur" onclick="return false" aria-haspopup="true">Luggage</a>
+      <div class="navdd mega">
+        <div class="navgrid">
+          <div class="navsec">
+            <div class="navttl">By Size</div>
+            <div class="navlist">
+              <a class="navpill" href="/luggage/cabin/">Cabin / Carry-On</a>
+              <a class="navpill" href="/luggage/check-in-medium/">Check-In Medium</a>
+              <a class="navpill" href="/luggage/check-in-large/">Check-In Large</a>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">By Type</div>
+            <div class="navlist">
+              <a class="navpill" href="/luggage/hard-shell/">Hard Shell</a>
+              <a class="navpill" href="/luggage/soft-shell/">Soft Shell</a>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">By Feature</div>
+            <div class="navlist">
+              <a class="navpill" href="/luggage/tsa-lock/">TSA Lock</a>
+              <a class="navpill" href="/luggage/spinner-wheels/">360° Spinner Wheels</a>
+              <a class="navpill" href="/luggage/expandable/">Expandable</a>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">By Travel Duration</div>
+            <div class="navlist">
+              <a class="navpill" href="/luggage/weekend/">Weekend (1-3 days)</a>
+              <a class="navpill" href="/luggage/short-trip/">Short Trip (4-7 days)</a>
+              <a class="navpill" href="/luggage/long-haul/">Long Haul (7+ days)</a>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">Sets &amp; Bundles</div>
+            <div class="navstack">
+              <div class="navbranchwrap">
+                <a class="navbranch" href="/luggage/sets/" onclick="return false" aria-haspopup="true">Luggage Sets</a>
+                <div class="navsubdd">
+                  <a href="/luggage/sets/2-piece/">2-Piece Sets</a>
+                  <a href="/luggage/sets/3-piece/">3-Piece Sets</a>
+                  <a href="/luggage/sets/family/">Family Sets</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </li>
     <li class="navitem">
-      <a href="#" class="navlink">Why AT</a>
-      <div class="navdd">
-        <a href="#">10-Year Warranty</a>
-        <a href="#">Brand Story</a>
-        <a href="#">Quality Promise</a>
-        <a href="#">Reviews &amp; UGC</a>
-        <a href="#">Store Locator</a>
+      <a href="/backpacks/" class="navlink" onclick="return false" aria-haspopup="true">Backpacks</a>
+      <div class="navdd mega">
+        <div class="navgrid">
+          <div class="navsec">
+            <div class="navttl">By Use</div>
+            <div class="navlist">
+              <a class="navpill" href="/backpacks/school/">School</a>
+              <a class="navpill" href="/backpacks/college/">College</a>
+              <a class="navpill" href="/backpacks/work-executive/">Work / Executive</a>
+              <a class="navpill" href="/backpacks/travel-trekking/">Travel &amp; Trekking</a>
+              <a class="navpill" href="/backpacks/casual/">Casual</a>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">By Feature</div>
+            <div class="navlist">
+              <a class="navpill" href="/backpacks/laptop/">Laptop Compatible</a>
+              <a class="navpill" href="/backpacks/usb-port/">USB Port</a>
+              <a class="navpill" href="/backpacks/rain-cover/">Rain Cover</a>
+              <a class="navpill" href="/backpacks/anti-theft/">Anti-theft</a>
+              <a class="navpill" href="/backpacks/eco-friendly/">Eco-friendly</a>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">By Size</div>
+            <div class="navlist">
+              <a class="navpill" href="/backpacks/under-20l/">Under 20L</a>
+              <a class="navpill" href="/backpacks/20-30l/">20-30L</a>
+              <a class="navpill" href="/backpacks/30l-plus/">30L+</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="navitem">
+      <a href="/duffles/" class="navlink" onclick="return false" aria-haspopup="true">Duffles</a>
+      <div class="navdd mega">
+        <div class="navgrid">
+          <div class="navsec">
+            <div class="navttl">Duffles</div>
+            <div class="navlist">
+              <a class="navpill" href="/duffles/wheeled/">Wheeled Duffle</a>
+              <a class="navpill" href="/duffles/weekender/">Weekender Duffle</a>
+              <a class="navpill" href="/duffles/sports/">Sports Duffle</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="navitem">
+      <a href="/for/" class="navlink" onclick="return false" aria-haspopup="true">By Journey</a>
+      <div class="navdd mega">
+        <div class="navgrid">
+          <div class="navsec">
+            <div class="navttl">Who's Travelling</div>
+            <div class="navlist">
+              <a class="navpill" href="/for/business-travel/">Business Travel</a>
+              <a class="navpill" href="/for/family-trip/">Family Trip</a>
+              <div class="navbranchwrap">
+                <a class="navbranch" href="/for/kids/" onclick="return false" aria-haspopup="true">Kids Travel</a>
+                <div class="navsubdd">
+                  <a href="/for/kids/backpacks/">Kids Backpacks</a>
+                  <a href="/for/kids/luggage/">Kids Luggage</a>
+                </div>
+              </div>
+              <a class="navpill" href="/for/solo-travel/">Solo Travel</a>
+              <a class="navpill" href="/for/couples/">Couples</a>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">Destination Type</div>
+            <div class="navlist">
+              <a class="navpill" href="/for/domestic-india/">Domestic India</a>
+              <a class="navpill" href="/for/international/">International</a>
+              <a class="navpill" href="/for/beach-resort/">Beach &amp; Resort</a>
+              <a class="navpill" href="/for/hills-trekking/">Hill Station &amp; Trekking</a>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">Special Occasion</div>
+            <div class="navlist">
+              <a class="navpill" href="/for/study-abroad/">Study Abroad</a>
+              <a class="navpill" href="/for/honeymoon/">Honeymoon Travel</a>
+              <a class="navpill" href="/for/wedding-trousseau/">Wedding / Trousseau</a>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">Women's Edit</div>
+            <div class="navstack">
+              <div class="navbranchwrap">
+                <a class="navbranch" href="/for/women/" onclick="return false" aria-haspopup="true">Women's Collections</a>
+                <div class="navsubdd">
+                  <a href="/for/women/luggage/">Women's Luggage</a>
+                  <a href="/for/women/backpacks/">Women's Backpacks</a>
+                  <a href="/for/women/duffles/">Women's Duffles</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="navitem">
+      <a href="/collections/" class="navlink" onclick="return false" aria-haspopup="true">Collections</a>
+      <div class="navdd mega">
+        <div class="navgrid">
+          <div class="navsec">
+            <div class="navttl">Featured</div>
+            <div class="navlist">
+              <a class="navpill" href="/collections/new-arrivals/">New Arrivals</a>
+              <a class="navpill" href="/collections/bestsellers/">Bestsellers</a>
+              <a class="navpill" href="/collections/collab-editions/">Collab Editions</a>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">Signature Series</div>
+            <div class="navlist">
+              <a class="navpill" href="/collections/at-x-masaba/">AT × Lovechild Masaba</a>
+              <a class="navpill" href="/collections/at-x-smurfs/">AT × Smurfs</a>
+              <a class="navpill" href="/collections/at-x-stranger-things/">AT × Stranger Things</a>
+              <a class="navpill" href="/collections/rollio/">Rollio Collection</a>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">Accessories</div>
+            <div class="navstack">
+              <div class="navbranchwrap">
+                <a class="navbranch" href="/collections/accessories/" onclick="return false" aria-haspopup="true">Travel Accessories</a>
+                <div class="navsubdd">
+                  <a href="/collections/accessories/locks/">Locks</a>
+                  <a href="/collections/accessories/travel-pillows/">Travel Pillows</a>
+                  <a href="/collections/accessories/luggage-belts/">Luggage Belts</a>
+                  <a href="/collections/accessories/bag-tags/">Bag Tags</a>
+                  <a href="/collections/accessories/eyeshades/">Eyeshades</a>
+                  <a href="/collections/accessories/foldable-bags/">Foldable Bags</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="navitem">
+      <a href="/travel-world/" class="navlink" onclick="return false" aria-haspopup="true">Travel World</a>
+      <div class="navdd mega">
+        <div class="navgrid">
+          <div class="navsec">
+            <div class="navttl">Packing Guides</div>
+            <div class="navstack">
+              <div class="navbranchwrap">
+                <a class="navbranch" href="/travel-world/packing-guides/" onclick="return false" aria-haspopup="true">Packing Guides Hub</a>
+                <div class="navsubdd">
+                  <a href="/travel-world/packing-guides/cabin-bag/">How To Pack A Cabin Bag</a>
+                  <a href="/travel-world/packing-guides/international/">International Trip Packing</a>
+                  <a href="/travel-world/packing-guides/business-trip/">Business Trip Packing</a>
+                  <a href="/travel-world/packing-guides/family-trip/">Family Trip Packing</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">Luggage Guides</div>
+            <div class="navstack">
+              <div class="navbranchwrap">
+                <a class="navbranch" href="/travel-world/luggage-guides/" onclick="return false" aria-haspopup="true">Luggage Guides Hub</a>
+                <div class="navsubdd">
+                  <a href="/travel-world/luggage-guides/cabin-size-rules/">Cabin Size Rules</a>
+                  <a href="/travel-world/luggage-guides/hard-vs-soft/">Hard Vs Soft</a>
+                  <a href="/travel-world/luggage-guides/best-cabin-bags-india/">Best Cabin Bags India</a>
+                  <a href="/travel-world/luggage-guides/how-to-choose-luggage/">How To Choose Luggage</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">Destination Guides</div>
+            <div class="navstack">
+              <div class="navbranchwrap">
+                <a class="navbranch" href="/travel-world/destination-guides/" onclick="return false" aria-haspopup="true">Destination Guides Hub</a>
+                <div class="navsubdd">
+                  <a href="/travel-world/destination-guides/goa/">Goa</a>
+                  <a href="/travel-world/destination-guides/manali/">Manali</a>
+                  <a href="/travel-world/destination-guides/europe/">Europe</a>
+                  <a href="/travel-world/destination-guides/bali/">Bali</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">Travel Tips</div>
+            <div class="navstack">
+              <div class="navbranchwrap">
+                <a class="navbranch" href="/travel-world/travel-tips/" onclick="return false" aria-haspopup="true">Travel Tips Hub</a>
+                <div class="navsubdd">
+                  <a href="/travel-world/travel-tips/airport-hacks/">Airport Hacks</a>
+                  <a href="/travel-world/travel-tips/airline-rules/">Airline Rules</a>
+                  <a href="/travel-world/travel-tips/first-time-flyer/">First-Time Flyer</a>
+                  <a href="/travel-world/travel-tips/frequent-flyer/">Frequent Flyer</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="navitem">
+      <a href="/why-at/" class="navlink" onclick="return false" aria-haspopup="true">Why AT</a>
+      <div class="navdd mega">
+        <div class="navgrid">
+          <div class="navsec">
+            <div class="navttl">Trust &amp; Service</div>
+            <div class="navlist">
+              <a class="navpill" href="/why-at/10-year-warranty/">10-Year Warranty</a>
+              <a class="navpill" href="/why-at/quality-testing/">Quality Testing</a>
+              <a class="navpill" href="/why-at/service-centers/">Service Centers</a>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">Brand</div>
+            <div class="navlist">
+              <a class="navpill" href="/why-at/about/">About</a>
+              <a class="navpill" href="/why-at/sustainability/">Sustainability</a>
+              <a class="navpill" href="/why-at/careers/">Careers</a>
+            </div>
+          </div>
+          <div class="navsec">
+            <div class="navttl">Helpful Links</div>
+            <div class="navlist">
+              <a class="navpill" href="/why-at/size-guide/">Size Guide</a>
+              <a class="navpill" href="/why-at/track-order/">Track Order</a>
+              <a class="navpill" href="/why-at/warranty-claim/">Warranty Claim</a>
+              <a class="navpill" href="/why-at/store-locator/">Store Locator</a>
+            </div>
+          </div>
+        </div>
       </div>
     </li>
   </ul>
