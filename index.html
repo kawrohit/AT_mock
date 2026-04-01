@@ -66,6 +66,19 @@ body{
   font-size:12px;transition:background .15s,color .15s
 }
 .navdd a:hover{background:var(--ow);color:var(--r)}
+.navdd.tree{min-width:320px;padding:10px 0;max-height:70vh;overflow:auto}
+.navgrp{padding:6px 0;border-top:1px solid rgba(11,31,58,.08)}
+.navgrp:first-child{border-top:none}
+.navhub{
+  display:block;padding:8px 16px;color:var(--n);text-decoration:none;font-size:12px;
+  font-weight:600;transition:background .15s,color .15s
+}
+.navhub:hover{background:var(--ow);color:var(--r)}
+.navsub{
+  display:block;padding:6px 16px 6px 30px;color:var(--sl);text-decoration:none;font-size:11.5px;
+  transition:background .15s,color .15s
+}
+.navsub:hover{background:var(--ow);color:var(--r)}
 .navicons{display:flex;align-items:center;gap:13px;margin-left:auto}
 .navic{color:rgba(255,255,255,.75);font-size:15px;cursor:pointer;text-decoration:none;position:relative}
 .cc{position:absolute;top:-6px;right:-6px;background:var(--r);color:#fff;
@@ -265,12 +278,15 @@ body{
 }
 .zoomov.on{opacity:1;visibility:visible}
 .zoomstage{
-  width:max-content;min-width:100%;margin:32px auto;min-height:calc(100vh - 64px);
-  display:flex;align-items:flex-start;justify-content:center
+  width:min(92vw,1180px);margin:32px auto;min-height:calc(100vh - 64px);
+  display:flex;align-items:center;justify-content:center
+}
+.zoompane{
+  width:100%;max-height:calc(100vh - 120px);overflow:auto;background:#fff;border-radius:18px;
+  box-shadow:0 18px 44px rgba(0,0,0,.28)
 }
 .zoomov img{
-  width:min(1180px,125vw);max-width:none;height:auto;border-radius:18px;display:block;
-  background:#fff;box-shadow:0 18px 44px rgba(0,0,0,.28)
+  width:min(1280px,135vw);max-width:none;height:auto;display:block
 }
 .zoomclose{
   position:absolute;top:20px;right:24px;border:none;background:transparent;color:#fff;
@@ -355,28 +371,36 @@ body{
     </li>
     <li class="navitem">
       <a href="#" class="navlink">Travel World</a>
-      <div class="navdd">
-        <a href="/travel-world/">Travel World Hub</a>
-        <a href="/travel-world/packing-guides/">Packing Guides</a>
-        <a href="/packing-guides/cabin-bag/">How To Pack A Cabin Bag</a>
-        <a href="/packing-guides/international/">International Trip Packing List</a>
-        <a href="/packing-guides/business-trip/">Business Travel Packing</a>
-        <a href="/packing-guides/family-trip/">Family Vacation Packing List India</a>
-        <a href="/travel-world/luggage-guides/">Luggage Guides</a>
-        <a href="/luggage-guides/cabin-size-rules/">Cabin Bag Size Rules India Airlines</a>
-        <a href="/luggage-guides/hard-vs-soft/">Hard Vs Soft Luggage</a>
-        <a href="/luggage-guides/best-cabin-bags-india/">Best Cabin Bags India</a>
-        <a href="/luggage-guides/how-to-choose-luggage/">How To Choose The Right Luggage</a>
-        <a href="/travel-world/destination-guides/">Destination Guides</a>
-        <a href="/destination-guides/goa/">What To Pack For Goa</a>
-        <a href="/destination-guides/europe/">Packing List Europe Trip From India</a>
-        <a href="/destination-guides/manali/">What To Carry For Manali Trip</a>
-        <a href="/destination-guides/bali/">Packing List Bali</a>
-        <a href="/travel-world/travel-tips/">Travel Tips</a>
-        <a href="/travel-tips/airport-hacks/">Airport Tips India</a>
-        <a href="/travel-tips/airline-rules/">Indigo SpiceJet Luggage Allowance Rules</a>
-        <a href="/travel-tips/first-time-flyer/">First Time Flying India Checklist</a>
-        <a href="/travel-tips/frequent-flyer/">Frequent Traveller Tips India</a>
+      <div class="navdd tree">
+        <a href="/travel-world/" class="navhub">Travel World</a>
+        <div class="navgrp">
+          <a href="/travel-world/packing-guides/" class="navhub">Packing Guides</a>
+          <a href="/packing-guides/cabin-bag/" class="navsub">How To Pack A Cabin Bag</a>
+          <a href="/packing-guides/international/" class="navsub">International Trip Packing List</a>
+          <a href="/packing-guides/business-trip/" class="navsub">Business Travel Packing</a>
+          <a href="/packing-guides/family-trip/" class="navsub">Family Vacation Packing List India</a>
+        </div>
+        <div class="navgrp">
+          <a href="/travel-world/luggage-guides/" class="navhub">Luggage Guides</a>
+          <a href="/luggage-guides/cabin-size-rules/" class="navsub">Cabin Bag Size Rules India Airlines</a>
+          <a href="/luggage-guides/hard-vs-soft/" class="navsub">Hard Vs Soft Luggage</a>
+          <a href="/luggage-guides/best-cabin-bags-india/" class="navsub">Best Cabin Bags India</a>
+          <a href="/luggage-guides/how-to-choose-luggage/" class="navsub">How To Choose The Right Luggage</a>
+        </div>
+        <div class="navgrp">
+          <a href="/travel-world/destination-guides/" class="navhub">Destination Guides</a>
+          <a href="/destination-guides/goa/" class="navsub">What To Pack For Goa</a>
+          <a href="/destination-guides/europe/" class="navsub">Packing List Europe Trip From India</a>
+          <a href="/destination-guides/manali/" class="navsub">What To Carry For Manali Trip</a>
+          <a href="/destination-guides/bali/" class="navsub">Packing List Bali</a>
+        </div>
+        <div class="navgrp">
+          <a href="/travel-world/travel-tips/" class="navhub">Travel Tips</a>
+          <a href="/travel-tips/airport-hacks/" class="navsub">Airport Tips India</a>
+          <a href="/travel-tips/airline-rules/" class="navsub">Indigo SpiceJet Luggage Allowance Rules</a>
+          <a href="/travel-tips/first-time-flyer/" class="navsub">First Time Flying India Checklist</a>
+          <a href="/travel-tips/frequent-flyer/" class="navsub">Frequent Traveller Tips India</a>
+        </div>
       </div>
     </li>
     <li class="navitem">
@@ -444,7 +468,9 @@ body{
 <div class="zoomov" id="pdp-zoom" onclick="closePdpZoom()">
   <button class="zoomclose" type="button" aria-label="Close image zoom" onclick="event.stopPropagation();closePdpZoom()">×</button>
   <div class="zoomstage" onclick="event.stopPropagation()">
-    <img id="pdp-zoom-img" src="" alt="Expanded product image">
+    <div class="zoompane" id="pdp-zoom-pane">
+      <img id="pdp-zoom-img" src="" alt="Expanded product image">
+    </div>
   </div>
 </div>
 
@@ -924,6 +950,7 @@ function makeCard(p,onclick){
   var swHtml=p.cols.map(function(c,i){
     return '<div class="sw'+(i===0?' on':'')+'" style="background:'+c+'"></div>'
   }).join('');
+  var metaPrice=(p.mr?'<span class="mp">'+p.mr+'</span>':'')+(p.off?'<span class="op">'+p.off+' off</span>':'');
   return '<div class="pc"'+(onclick?' onclick="'+onclick+'"':'')+' >'
     +'<div class="pi">'
     +'<span class="pbdg" style="background:'+p.bc+'">'+p.bdg+'</span>'
@@ -934,7 +961,7 @@ function makeCard(p,onclick){
     +'<div class="pmeta">'+p.mt+'</div>'
     +'<div class="prat"><span class="stars">★★★★★</span><span style="font-size:11px;font-weight:500">4.8</span><span class="rc">(1.2k)</span></div>'
     +'<div class="swatches">'+swHtml+'</div>'
-    +'<div class="ppr"><span class="sp">'+p.pr+'</span><span class="mp">'+p.mr+'</span><span class="op">'+p.off+' off</span></div>'
+    +'<div class="ppr"><span class="sp">'+p.pr+'</span>'+metaPrice+'</div>'
     +'<button class="batc">Add to Bag</button>'
     +'</div></div>'
 }
@@ -1062,9 +1089,12 @@ function openPdpZoom(){
   document.getElementById('pdp-zoom-img').src=active.src;
   document.getElementById('pdp-zoom-img').alt=active.alt;
   var overlay=document.getElementById('pdp-zoom');
+  var pane=document.getElementById('pdp-zoom-pane');
   overlay.classList.add('on');
   overlay.scrollTop=0;
   overlay.scrollLeft=0;
+  pane.scrollTop=0;
+  pane.scrollLeft=0;
 }
 
 function closePdpZoom(){
