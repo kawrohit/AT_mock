@@ -260,14 +260,18 @@ body{
 .mainzoom{cursor:zoom-in}
 .zoomov{
   position:fixed;inset:0;background:rgba(11,31,58,.82);padding:32px;opacity:0;
-  visibility:hidden;transition:all .18s ease;z-index:860;overflow:auto
+  visibility:hidden;transition:all .18s ease;z-index:860;overflow:auto;
+  -webkit-overflow-scrolling:touch
 }
 .zoomov.on{opacity:1;visibility:visible}
 .zoomstage{
-  min-width:max-content;min-height:calc(100vh - 64px);display:flex;align-items:center;
-  justify-content:center
+  width:max-content;min-width:100%;margin:32px auto;min-height:calc(100vh - 64px);
+  display:flex;align-items:flex-start;justify-content:center
 }
-.zoomov img{width:min(1400px,140vw);max-width:none;height:auto;border-radius:18px;display:block;background:#fff}
+.zoomov img{
+  width:min(1180px,125vw);max-width:none;height:auto;border-radius:18px;display:block;
+  background:#fff;box-shadow:0 18px 44px rgba(0,0,0,.28)
+}
 .zoomclose{
   position:absolute;top:20px;right:24px;border:none;background:transparent;color:#fff;
   font-size:34px;line-height:1;cursor:pointer;font-family:inherit
@@ -352,11 +356,27 @@ body{
     <li class="navitem">
       <a href="#" class="navlink">Travel World</a>
       <div class="navdd">
-        <a href="#">Pack Guides</a>
-        <a href="#">Destination Series</a>
-        <a href="#">AT Stories</a>
-        <a href="#">Packing Checklists</a>
-        <a href="#">Travel Hacks</a>
+        <a href="/travel-world/">Travel World Hub</a>
+        <a href="/travel-world/packing-guides/">Packing Guides</a>
+        <a href="/packing-guides/cabin-bag/">How To Pack A Cabin Bag</a>
+        <a href="/packing-guides/international/">International Trip Packing List</a>
+        <a href="/packing-guides/business-trip/">Business Travel Packing</a>
+        <a href="/packing-guides/family-trip/">Family Vacation Packing List India</a>
+        <a href="/travel-world/luggage-guides/">Luggage Guides</a>
+        <a href="/luggage-guides/cabin-size-rules/">Cabin Bag Size Rules India Airlines</a>
+        <a href="/luggage-guides/hard-vs-soft/">Hard Vs Soft Luggage</a>
+        <a href="/luggage-guides/best-cabin-bags-india/">Best Cabin Bags India</a>
+        <a href="/luggage-guides/how-to-choose-luggage/">How To Choose The Right Luggage</a>
+        <a href="/travel-world/destination-guides/">Destination Guides</a>
+        <a href="/destination-guides/goa/">What To Pack For Goa</a>
+        <a href="/destination-guides/europe/">Packing List Europe Trip From India</a>
+        <a href="/destination-guides/manali/">What To Carry For Manali Trip</a>
+        <a href="/destination-guides/bali/">Packing List Bali</a>
+        <a href="/travel-world/travel-tips/">Travel Tips</a>
+        <a href="/travel-tips/airport-hacks/">Airport Tips India</a>
+        <a href="/travel-tips/airline-rules/">Indigo SpiceJet Luggage Allowance Rules</a>
+        <a href="/travel-tips/first-time-flyer/">First Time Flying India Checklist</a>
+        <a href="/travel-tips/frequent-flyer/">Frequent Traveller Tips India</a>
       </div>
     </li>
     <li class="navitem">
@@ -422,7 +442,7 @@ body{
 </aside>
 
 <div class="zoomov" id="pdp-zoom" onclick="closePdpZoom()">
-  <button class="zoomclose" type="button" aria-label="Close image zoom" onclick="closePdpZoom()">×</button>
+  <button class="zoomclose" type="button" aria-label="Close image zoom" onclick="event.stopPropagation();closePdpZoom()">×</button>
   <div class="zoomstage" onclick="event.stopPropagation()">
     <img id="pdp-zoom-img" src="" alt="Expanded product image">
   </div>
@@ -1041,7 +1061,10 @@ function openPdpZoom(){
   if(!active){return}
   document.getElementById('pdp-zoom-img').src=active.src;
   document.getElementById('pdp-zoom-img').alt=active.alt;
-  document.getElementById('pdp-zoom').classList.add('on');
+  var overlay=document.getElementById('pdp-zoom');
+  overlay.classList.add('on');
+  overlay.scrollTop=0;
+  overlay.scrollLeft=0;
 }
 
 function closePdpZoom(){
