@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>American Tourister India — Redesign Mockup</title>
+<style>
+:root{
+  --n:#0B1F3A;--nm:#0F2A4F;--r:#E63024;--rd:#C42B1F;
+  --s:#F5ECD7;--sd:#E8D3B0;--sl:#4F5F72;--w:#fff;
+  --ow:#F5F4F0;--g1:#EDECEA;--g2:#DCDBD7;--g4:#9A9896;
+  --bd:rgba(11,31,58,.11);--bds:rgba(11,31,58,.22);
+  --shadow:0 4px 18px rgba(11,31,58,.09)
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,"SF Pro Text","Helvetica Neue",Helvetica,sans-serif;
+  color:var(--n);background:#fff;font-size:14px;line-height:1.65;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased
+}
+/* PAGE SWITCHER */
+.dbar{
+  background:#f0eeeb;border-bottom:1px solid #ddd;
+  padding:8px 16px;display:flex;align-items:center;gap:7px;
+  flex-wrap:wrap;position:sticky;top:0;z-index:9000
+}
+.dbl{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-right:2px}
+.dbtn{
+  font-size:11px;padding:4px 12px;border:1px solid #ccc;
+  border-radius:99px;background:#fff;color:#555;
+  cursor:pointer;transition:all .15s;font-family:inherit
+}
+.dbtn.on{background:var(--n);color:#fff;border-color:var(--n)}
+.dbtn:hover:not(.on){background:#eee}
+.page{display:none}
+.page.on{display:block}
+/* NAVBAR */
+.nav{
+  background:var(--n);height:56px;display:flex;align-items:center;
+  padding:0 5%;gap:24px;position:sticky;top:37px;z-index:500
+}
+.logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+.logo img{display:block;height:26px;width:auto}
+.navul{display:flex;gap:18px;list-style:none;flex:1;height:100%}
+.navitem{position:relative;display:flex;align-items:center}
+.navlink{
+  height:56px;display:flex;align-items:center;color:rgba(255,255,255,.65);
+  text-decoration:none;font-size:12.5px;transition:color .15s;white-space:nowrap
+}
+.navlink:hover,.navitem:hover>.navlink,.navitem:focus-within>.navlink,.navlink.cur{color:#fff}
+.navlink.cur{border-bottom:1.5px solid var(--r);padding-bottom:1px}
+.navdd{
+  position:absolute;top:calc(100% + 10px);left:0;min-width:220px;background:#fff;
+  border:1px solid var(--bd);border-radius:14px;padding:10px 0;box-shadow:var(--shadow);
+  opacity:0;visibility:hidden;transform:translateY(8px);transition:all .18s ease
+}
+.navdd::before{
+  content:'';position:absolute;left:0;right:0;top:-14px;height:14px
+}
+.navitem:hover .navdd,.navitem:focus-within .navdd{
+  opacity:1;visibility:visible;transform:translateY(0)
+}
+.navdd a{
+  display:block;padding:8px 16px;color:var(--n);text-decoration:none;
+  font-size:12px;transition:background .15s,color .15s
+}
+.navdd a:hover{background:var(--ow);color:var(--r)}
+.navicons{display:flex;align-items:center;gap:13px;margin-left:auto}
+.navic{color:rgba(255,255,255,.75);font-size:15px;cursor:pointer;text-decoration:none;position:relative}
+.cc{position:absolute;top:-6px;right:-6px;background:var(--r);color:#fff;
+  font-size:8px;width:14px;height:14px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-weight:700}
+.cc:empty{display:none}
+.cartov{
+  position:fixed;inset:0;background:rgba(11,31,58,.42);opacity:0;visibility:hidden;
+  transition:all .2s ease;z-index:820
+}
+.cartov.on{opacity:1;visibility:visible}
+.cartdr{
+  position:fixed;top:0;right:0;height:100vh;width:min(390px,92vw);background:#fff;
+  box-shadow:-14px 0 36px rgba(11,31,58,.18);transform:translateX(100%);
+  transition:transform .24s ease;z-index:830;display:flex;flex-direction:column
+}
+.cartdr.on{transform:translateX(0)}
+.carthead{
+  padding:18px 20px;border-bottom:.5px solid var(--bd);display:flex;align-items:center;
+  justify-content:space-between;background:var(--ow)
+}
+.cartbody{padding:18px 20px;flex:1;overflow:auto;background:#fff}
+.cartfoot{padding:16px 20px;border-top:.5px solid var(--bd);background:#fff}
+.cartclose{
+  border:none;background:transparent;font-size:20px;line-height:1;color:var(--sl);
+  cursor:pointer;font-family:inherit
+}
+.cartitem{
+  display:flex;gap:12px;align-items:flex-start;padding:14px;border:.5px solid var(--bd);
+  border-radius:12px;background:var(--ow)
+}
+.qtybtn{
+  width:22px;height:22px;border:none;border-radius:50%;background:var(--n);color:#fff;
+  cursor:pointer;font-size:13px;font-family:inherit
+}
+.cartempty{
+  height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;color:var(--sl);gap:10px;padding:28px
+}
+.perkcard{
+  background:#fff;border:.5px solid var(--bd);border-radius:14px;padding:16px 16px 14px;
+  margin-bottom:16px
+}
+.perkmsg{font-size:11px;color:var(--n);line-height:1.6;text-transform:uppercase}
+.perkmsg strong{color:var(--r)}
+.perksub{font-size:11px;color:var(--sl);margin-top:4px}
+.perkbar{
+  position:relative;height:4px;background:#E2E4E8;border-radius:999px;margin:16px 0 18px
+}
+.perkfill{
+  position:absolute;left:0;top:0;bottom:0;background:var(--r);border-radius:999px
+}
+.perkpts{display:flex;justify-content:space-between;gap:10px}
+.perkpt{flex:1;text-align:center}
+.perkdot{
+  width:22px;height:22px;border-radius:50%;margin:0 auto 8px;background:#D5D8DE;
+  color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700
+}
+.perkpt.on .perkdot{background:var(--r)}
+.perklabel{font-size:10px;color:var(--n);line-height:1.3}
+/* BUTTONS */
+.btn-r{background:var(--r);color:#fff;font-size:13px;font-weight:500;padding:11px 22px;
+  border:none;border-radius:7px;cursor:pointer;display:inline-flex;align-items:center;
+  gap:6px;transition:background .15s;font-family:inherit;text-decoration:none}
+.btn-r:hover{background:var(--rd)}
+.btn-w{background:transparent;color:#fff;font-size:13px;padding:10px 20px;
+  border:1.5px solid rgba(255,255,255,.4);border-radius:7px;cursor:pointer;
+  display:inline-flex;align-items:center;gap:6px;transition:all .15s;font-family:inherit}
+.btn-w:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-n{background:var(--n);color:#fff;font-size:13px;font-weight:500;padding:11px 22px;
+  border:none;border-radius:7px;cursor:pointer;display:inline-flex;align-items:center;
+  gap:6px;transition:background .15s;font-family:inherit}
+.btn-n:hover{background:var(--nm)}
+.btn-ro{background:transparent;color:var(--r);font-size:12.5px;font-weight:500;
+  padding:9px 18px;border:1.5px solid var(--r);border-radius:7px;cursor:pointer;
+  transition:all .15s;font-family:inherit}
+.btn-ro:hover{background:var(--r);color:#fff}
+/* CARDS */
+.pc{border:.5px solid var(--bd);border-radius:12px;overflow:hidden;background:#fff;
+  cursor:pointer;transition:box-shadow .2s,transform .2s}
+.pc:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(11,31,58,.1)}
+/* FORM */
+.fi{border:1px solid rgba(11,31,58,.15);border-radius:7px;padding:9px 12px;
+  font-size:13px;color:var(--n);background:#fff;outline:none;font-family:inherit;
+  width:100%;transition:border-color .15s}
+.fi:focus{border-color:var(--n)}
+.fi.f{background:var(--ow)}
+.fi::placeholder{color:var(--sl)}
+/* PULSAR */
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.pd{width:7px;height:7px;border-radius:50%;background:var(--r);
+  animation:pulse 1.4s ease-in-out infinite;flex-shrink:0}
+/* HERO */
+.hero{background:var(--n);min-height:490px;display:flex;align-items:center;
+  padding:52px 5%;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 55% 80% at 72% 50%,rgba(27,61,99,.65),transparent 65%)}
+.hero-t{position:relative;z-index:2;max-width:450px}
+.hero-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(230,48,36,.14);
+  border:1px solid rgba(230,48,36,.28);color:#FF7264;font-size:9.5px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:99px;margin-bottom:16px}
+.hero h1{font-size:47px;font-weight:500;color:#fff;line-height:1.06;
+  letter-spacing:-.03em;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:var(--s)}
+.hero p{color:rgba(255,255,255,.55);font-size:14px;margin-bottom:24px;
+  line-height:1.65;max-width:370px}
+.hero-vis{
+  position:absolute;right:5%;top:50%;transform:translateY(-50%);z-index:1;
+  width:min(56vw,780px);height:calc(100% - 52px);border-radius:24px;overflow:hidden;
+  box-shadow:0 24px 60px rgba(0,0,0,.24)
+}
+.hero-vis img{
+  width:100%;height:100%;object-fit:cover;object-position:center;display:block
+}
+/* TRUST BAR */
+.tbar{background:#0F2A4F;padding:11px 5%;display:flex;justify-content:center;
+  gap:28px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.06)}
+.ti{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.72);font-size:11px}
+/* CAT TILES */
+.ctg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:32px 5%;background:var(--ow)}
+.ct{border-radius:13px;height:184px;position:relative;overflow:hidden;cursor:pointer;
+  display:flex;flex-direction:column;justify-content:flex-end;padding:16px 18px;transition:transform .2s}
+.ct:hover{transform:translateY(-3px)}
+.ct::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(11,31,58,.8) 0%,rgba(11,31,58,.1) 55%,transparent)}
+.ct1{background:linear-gradient(140deg,#1A2F4E,#0A1B2F)}
+.ct2{background:linear-gradient(140deg,#281A3C,#160D20)}
+.ct3{background:linear-gradient(140deg,#183020,#0C1C10)}
+.ctimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ct-bdg{position:absolute;right:13px;bottom:13px;background:rgba(245,244,240,.92);
+  border:1px solid rgba(11,31,58,.12);color:var(--n);font-size:9.5px;font-weight:600;
+  padding:4px 9px;border-radius:999px;z-index:2;backdrop-filter:blur(6px)}
+.ct-sv{position:absolute;right:14px;top:50%;transform:translateY(-52%);z-index:1;opacity:.7}
+.ct-c{position:relative;z-index:2}
+.ct-c h3{color:#fff;font-size:15.5px;font-weight:500;margin-bottom:2px}
+.ct-c p{color:rgba(255,255,255,.5);font-size:11px}
+.ct-c span{color:rgba(255,255,255,.38);font-size:11px;display:block;margin-top:4px}
+/* PRODUCT GRID */
+.pg4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.pg3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pi{height:168px;background:var(--ow);display:flex;align-items:center;
+  justify-content:center;position:relative;overflow:hidden}
+.pi img{width:100%;height:100%;object-fit:contain;display:block}
+.pbdg{position:absolute;top:8px;left:8px;color:#fff;font-size:9px;font-weight:600;
+  padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:.04em}
+.pinfo{padding:12px}
+.pname{font-size:12px;font-weight:500;color:var(--n);margin-bottom:2px;line-height:1.3}
+.pmeta{font-size:10.5px;color:var(--sl);margin-bottom:5px}
+.prat{display:flex;align-items:center;gap:3px;margin-bottom:5px}
+.stars{color:#F5A623;font-size:10px;letter-spacing:-1px}
+.rc{font-size:10.5px;color:var(--sl)}
+.swatches{display:flex;gap:4px;margin-bottom:7px}
+.sw{width:13px;height:13px;border-radius:50%;border:1.5px solid transparent;cursor:pointer;
+  transition:transform .15s,border-color .15s}
+.sw:hover,.sw.on{transform:scale(1.3);border-color:var(--n)}
+.ppr{display:flex;align-items:center;gap:5px;margin-bottom:8px}
+.sp{font-size:14.5px;font-weight:500;color:var(--n)}
+.mp{font-size:11px;color:var(--g4);text-decoration:line-through}
+.op{font-size:10px;color:#1A7A4A;font-weight:500}
+.batc{width:100%;background:var(--n);color:#fff;font-size:11px;font-weight:500;padding:8px;
+  border:none;border-radius:6px;cursor:pointer;transition:background .15s;font-family:inherit}
+.batc:hover{background:var(--nm)}
+/* SECTIONS */
+.section{padding:44px 5%}
+.ey{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--r);display:block;margin-bottom:5px}
+.st{font-size:24px;font-weight:500;color:var(--n);letter-spacing:-.025em;line-height:1.2}
+.st.lt{color:#fff}
+.ss{font-size:12.5px;color:var(--sl);margin-top:4px}
+.shr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px}
+.slnk{font-size:12px;color:var(--r);text-decoration:none}
+/* FEATURES */
+.fcard{background:#fff;border-radius:12px;padding:20px}
+.fiw{width:44px;height:44px;background:var(--n);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px}
+/* COLLECTION SPOTLIGHT */
+.cspot{background:var(--n);padding:44px 5%;display:flex;align-items:center;
+  gap:36px;overflow:hidden;position:relative}
+.cspot::before{content:'';position:absolute;right:-60px;top:-60px;width:300px;height:300px;
+  background:rgba(230,48,36,.07);border-radius:50%}
+.cspot img{display:block;width:min(42vw,520px);max-width:100%;border-radius:18px}
+/* FOOTER */
+.footer{background:var(--n);padding:32px 5% 16px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px;margin-bottom:22px}
+/* PDP */
+.pdpg{display:grid;grid-template-columns:1fr 390px;gap:30px;align-items:start}
+.thumb{width:62px;height:62px;background:var(--ow);border-radius:7px;
+  border:1.5px solid transparent;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;overflow:hidden;transition:border-color .15s}
+.thumb.on{border-color:var(--n)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.mainzoom{cursor:zoom-in}
+.zoomov{
+  position:fixed;inset:0;background:rgba(11,31,58,.82);padding:32px;opacity:0;
+  visibility:hidden;transition:all .18s ease;z-index:860;overflow:auto
+}
+.zoomov.on{opacity:1;visibility:visible}
+.zoomstage{
+  min-width:max-content;min-height:calc(100vh - 64px);display:flex;align-items:center;
+  justify-content:center
+}
+.zoomov img{width:min(1400px,140vw);max-width:none;height:auto;border-radius:18px;display:block;background:#fff}
+.zoomclose{
+  position:absolute;top:20px;right:24px;border:none;background:transparent;color:#fff;
+  font-size:34px;line-height:1;cursor:pointer;font-family:inherit
+}
+.ptrust{display:flex;border:.5px solid var(--bd);border-radius:7px;overflow:hidden;margin-bottom:12px}
+.pti{flex:1;padding:8px 5px;text-align:center;background:var(--ow);border-right:.5px solid var(--bd)}
+.pti:last-child{border-right:none}
+.sopt{border:1.5px solid var(--bd);border-radius:7px;padding:8px 6px;text-align:center;
+  cursor:pointer;transition:all .15s;background:#fff}
+.sopt.on{border-color:var(--n);background:rgba(11,31,58,.03)}
+.csw{width:28px;height:28px;border-radius:50%;border:2px solid transparent;
+  cursor:pointer;transition:all .15s}
+.csw.on{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--n)}
+/* REVIEW */
+.rsm{display:flex;gap:22px;align-items:center;padding:18px;background:#fff;
+  border-radius:12px;border:.5px solid var(--bd);margin:16px 0 18px}
+/* CHECKOUT */
+.ckhead{background:var(--n);height:52px;display:flex;align-items:center;
+  justify-content:space-between;padding:0 5%}
+.ckwrap{display:grid;grid-template-columns:1fr 310px}
+.cksec{background:#fff;border-radius:12px;padding:16px;margin-bottom:10px}
+.dlopt{display:flex;align-items:center;gap:10px;padding:11px;
+  border:1.5px solid var(--bd);border-radius:7px;cursor:pointer;transition:border-color .15s}
+.dlopt.on{border-color:var(--n);background:rgba(11,31,58,.02)}
+.dlrad{width:15px;height:15px;border-radius:50%;border:2px solid var(--bd);
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:border-color .15s}
+.dlopt.on .dlrad{border-color:var(--n)}
+.dlopt.on .dlrad::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--n)}
+.pm{border:1.5px solid var(--bd);border-radius:7px;overflow:hidden;margin-bottom:6px;transition:border-color .15s}
+.pm.on{border-color:var(--n)}
+.pmh{display:flex;align-items:center;gap:9px;padding:11px;cursor:pointer}
+.pmb{padding:0 11px 11px;display:none}
+.pm.on .pmb{display:block}
+</style>
+
+<!-- DEMO BAR -->
+<div class="dbar">
+  <span class="dbl">View page</span>
+  <button class="dbtn on" id="d0" onclick="showPage('home',0)">🏠 Homepage</button>
+  <button class="dbtn" id="d1" onclick="showPage('cat',1)">🗂 Category</button>
+  <button class="dbtn" id="d2" onclick="showPage('pdp',2)">🛒 Product</button>
+  <button class="dbtn" id="d3" onclick="showPage('ck',3)">💳 Checkout</button>
+  <span style="margin-left:auto;font-size:10px;color:#999">American Tourister India — Redesign Mockup v2</span>
+</div>
+
+<!-- SHARED NAV -->
+<nav class="nav" id="sitenav">
+  <a class="logo" href="#" onclick="showPage('home',0);return false" aria-label="American Tourister home">
+    <img src="https://americantourister.in/cdn/shop/files/615-2023_03_31-AT_Logo_200x50__1.webp?v=1742636999&width=280" alt="American Tourister">
+  </a>
+  <ul class="navul">
+    <li class="navitem">
+      <a href="#" class="navlink cur">Shop Luggage</a>
+      <div class="navdd">
+        <a href="#">Cabin / Carry-On</a>
+        <a href="#">Check-In (M/L)</a>
+        <a href="#">Luggage Sets</a>
+        <a href="#">Hard Shell</a>
+        <a href="#">Soft Shell</a>
+      </div>
+    </li>
+    <li class="navitem">
+      <a href="#" class="navlink">By Journey</a>
+      <div class="navdd">
+        <a href="#">Weekend Escape</a>
+        <a href="#">Business Travel</a>
+        <a href="#">Family Trip</a>
+        <a href="#">International</a>
+        <a href="#">Study Abroad</a>
+      </div>
+    </li>
+    <li class="navitem">
+      <a href="#" class="navlink">Collections</a>
+      <div class="navdd">
+        <a href="#">New Arrivals</a>
+        <a href="#">Bestsellers</a>
+        <a href="#">Collab Editions</a>
+        <a href="#">Bags &amp; Packs</a>
+        <a href="#">Kids Collection</a>
+      </div>
+    </li>
+    <li class="navitem">
+      <a href="#" class="navlink">Travel World</a>
+      <div class="navdd">
+        <a href="#">Pack Guides</a>
+        <a href="#">Destination Series</a>
+        <a href="#">AT Stories</a>
+        <a href="#">Packing Checklists</a>
+        <a href="#">Travel Hacks</a>
+      </div>
+    </li>
+    <li class="navitem">
+      <a href="#" class="navlink">Why AT</a>
+      <div class="navdd">
+        <a href="#">10-Year Warranty</a>
+        <a href="#">Brand Story</a>
+        <a href="#">Quality Promise</a>
+        <a href="#">Reviews &amp; UGC</a>
+        <a href="#">Store Locator</a>
+      </div>
+    </li>
+  </ul>
+  <div class="navicons">
+    <a class="navic" href="#">🔍</a>
+    <a class="navic" href="#">👤</a>
+    <a class="navic" href="#" style="position:relative" onclick="openCart();return false" aria-label="Open cart">🛒<span class="cc" id="cart-count">0</span></a>
+  </div>
+</nav>
+
+<div class="cartov" id="cart-overlay" onclick="closeCart()"></div>
+<aside class="cartdr" id="cart-drawer" aria-label="Shopping cart">
+  <div class="carthead">
+    <div>
+      <div style="font-size:15px;font-weight:500;color:var(--n)">Your Bag</div>
+      <div id="cart-head-copy" style="font-size:11px;color:var(--sl);margin-top:2px">No items added yet</div>
+    </div>
+    <button class="cartclose" type="button" onclick="closeCart()" aria-label="Close cart">×</button>
+  </div>
+  <div class="cartbody">
+    <div class="perkcard" id="cart-perks">
+      <div class="perkmsg" id="cart-perk-msg">YOU ARE <strong>₹7,999</strong> AWAY FROM FLAT500.</div>
+      <div class="perksub" id="cart-perk-sub">Add your Trento Spinner to unlock offers.</div>
+      <div class="perkbar">
+        <div class="perkfill" id="cart-perk-fill" style="width:0%"></div>
+      </div>
+      <div class="perkpts">
+        <div class="perkpt" id="cart-perk-free">
+          <div class="perkdot">✓</div>
+          <div class="perklabel">FREE DELIVERY</div>
+        </div>
+        <div class="perkpt" id="cart-perk-discount">
+          <div class="perkdot">%</div>
+          <div class="perklabel">5% OFF</div>
+        </div>
+        <div class="perkpt" id="cart-perk-flat">
+          <div class="perkdot">₹</div>
+          <div class="perklabel">FLAT500</div>
+        </div>
+      </div>
+    </div>
+    <div id="cart-body"></div>
+  </div>
+  <div class="cartfoot">
+    <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--sl);margin-bottom:6px">
+      <span>Subtotal</span><span id="cart-subtotal">₹0</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:14px;font-weight:500;color:var(--n);margin-bottom:12px">
+      <span>Total</span><span id="cart-total">₹0</span>
+    </div>
+    <button class="btn-r" id="cart-checkout-btn" style="width:100%;justify-content:center" type="button" onclick="proceedFromCart()" disabled>Proceed to Checkout</button>
+  </div>
+</aside>
+
+<div class="zoomov" id="pdp-zoom" onclick="closePdpZoom()">
+  <button class="zoomclose" type="button" aria-label="Close image zoom" onclick="closePdpZoom()">×</button>
+  <div class="zoomstage" onclick="event.stopPropagation()">
+    <img id="pdp-zoom-img" src="" alt="Expanded product image">
+  </div>
+</div>
+
+<!-- ══════════════════════ PAGE: HOME ══════════════════════ -->
+<div id="pg-home" class="page on">
+
+<section class="hero">
+  <div class="hero-t">
+    <div class="hero-pill">✦ New Season · Just Landed</div>
+    <h1>Your journey<br><em>deserves better.</em></h1>
+    <p>Luggage built for 10 years. Designed for every trip India takes you on — Goa weekends to Europe adventures.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn-r" onclick="showPage('cat',1)">Shop Luggage →</button>
+      <button class="btn-w" onclick="showPage('pdp',2)">See Bestseller</button>
+    </div>
+  </div>
+  <div class="hero-vis">
+    <img src="/Users/rohit/Downloads/Gemini_Generated_Image_y1exy5y1exy5y1ex.png" alt="Traveler walking through an airport terminal with a bright blue suitcase">
+  </div>
+</section>
+
+<div class="tbar" id="tbar"></div>
+
+<div class="ctg" id="ctg"></div>
+
+<section class="section" style="background:#fff">
+  <div class="shr">
+    <div><span class="ey">Most Loved</span><h2 class="st">Our Bestsellers</h2></div>
+    <a href="#" class="slnk">View all →</a>
+  </div>
+  <div class="pg4" id="bsg"></div>
+</section>
+
+<section class="section" style="background:var(--s)">
+  <div style="text-align:center;margin-bottom:24px">
+    <span class="ey">Built Different</span>
+    <h2 class="st">Why travelers choose AT</h2>
+    <p class="ss">Not just luggage. A decade of engineering behind every trip.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px" id="fgd"></div>
+</section>
+
+<section class="cspot" id="cspot"></section>
+
+<section class="section" style="background:#fff">
+  <div style="text-align:center;margin-bottom:20px">
+    <span class="ey">50,000+ Travelers</span>
+    <h2 class="st">From our community</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:24px" id="sstats"></div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px" id="rg"></div>
+</section>
+
+<section style="background:var(--s);padding:36px 5%;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap">
+  <div>
+    <h3 style="font-size:18px;font-weight:500;color:var(--n);margin-bottom:3px;letter-spacing:-.015em">Pack smarter. Travel better.</h3>
+    <p style="font-size:12px;color:var(--sl)">Get ₹300 off your first order + exclusive travel tips from AT community.</p>
+  </div>
+  <div style="display:flex;gap:7px;flex-wrap:wrap">
+    <input class="fi" style="width:230px" placeholder="Your email address" type="email"/>
+    <button class="btn-n">Claim Offer</button>
+  </div>
+</section>
+
+<footer class="footer" id="ft"></footer>
+</div>
+
+<!-- ══════════════════════ PAGE: CATEGORY ══════════════════════ -->
+<div id="pg-cat" class="page">
+<div style="background:var(--n);padding:26px 5%">
+  <div style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:4px">Luggage › Cabin Bags</div>
+  <h1 style="font-size:26px;font-weight:500;color:#fff;letter-spacing:-.025em;margin-bottom:3px">Cabin Bags</h1>
+  <p style="color:rgba(255,255,255,.45);font-size:12px">Carry-on approved. Overhead-bin perfect. From ₹2,999.</p>
+</div>
+<div style="background:#fff;padding:10px 5%;border-bottom:.5px solid var(--bd);display:flex;align-items:center;gap:7px;flex-wrap:wrap" id="fbar"></div>
+<div style="padding:8px 5%;display:flex;justify-content:space-between;align-items:center;background:var(--ow);border-bottom:.5px solid var(--bd)">
+  <span style="font-size:11px;color:var(--sl)">Showing 24 cabin bags</span>
+  <select class="fi" style="width:auto;padding:5px 10px"><option>Sort: Bestselling</option><option>Price: Low to High</option><option>Highest Rated</option><option>Newest First</option></select>
+</div>
+<div class="pg3" style="padding:20px 5%;background:var(--ow)" id="cpg"></div>
+<div style="text-align:center;padding:20px 5%;background:var(--ow)">
+  <button class="btn-n">Load More Products</button>
+</div>
+</div>
+
+<!-- ══════════════════════ PAGE: PDP ══════════════════════ -->
+<div id="pg-pdp" class="page">
+
+<div style="padding:9px 5%;background:var(--ow);border-bottom:.5px solid var(--bd);font-size:11px;color:var(--sl);display:flex;gap:5px">
+  <a href="#" style="color:var(--sl);text-decoration:none">Home</a> ›
+  <a href="#" style="color:var(--sl);text-decoration:none">Luggage</a> ›
+  <a href="#" style="color:var(--sl);text-decoration:none">Cabin</a> ›
+  <span style="color:var(--n)" id="pdp-breadcrumb-name">Trento Spinner 55 cm</span>
+</div>
+
+<div style="padding:20px 5%;background:#fff">
+<div class="pdpg">
+
+  <!-- GALLERY -->
+  <div style="position:sticky;top:95px">
+    <div id="mainimg" class="mainzoom" onclick="openPdpZoom()" style="width:100%;height:380px;background:var(--ow);border-radius:13px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:8px"></div>
+    <div style="display:flex;gap:6px" id="thumbs"></div>
+  </div>
+
+  <!-- PANEL -->
+  <div>
+    <div id="pdp-kicker" style="font-size:10px;color:var(--r);font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px">Hard Luggage · Cabin · 4-Wheel Spinner</div>
+    <div id="pdp-name" style="font-size:21px;font-weight:500;color:var(--n);letter-spacing:-.015em;margin-bottom:7px;line-height:1.2">Trento Spinner 55 cm</div>
+    <div style="display:flex;align-items:center;gap:7px;margin-bottom:13px">
+      <span style="color:#F5A623;font-size:11px;letter-spacing:-1px">★★★★★</span>
+      <span style="font-size:12px;font-weight:500">4.8</span>
+      <a href="#" style="font-size:11px;color:var(--sl);text-decoration:none;border-bottom:1px solid var(--g2)">2,847 reviews</a>
+      <span style="font-size:9.5px;background:#E5F3EC;color:#1A7A4A;padding:2px 6px;border-radius:4px;font-weight:500">Bestseller</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:17px;padding-bottom:17px;border-bottom:.5px solid var(--bd)">
+      <span id="pdp-price" style="font-size:25px;font-weight:500;letter-spacing:-.025em">₹6,075</span>
+      <span id="pdp-mrp" style="font-size:14px;color:var(--g4);text-decoration:line-through">₹8,100</span>
+      <span id="pdp-off" style="background:#E5F3EC;color:#1A7A4A;font-size:11px;font-weight:500;padding:2px 7px;border-radius:4px">25% off</span>
+      <span style="font-size:11px;color:var(--sl)">Incl. GST</span>
+    </div>
+
+    <span style="font-size:10px;font-weight:500;color:var(--n);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;display:block">Colour — <span id="cname" style="text-transform:none;font-weight:400;color:var(--sl)">Midnight Navy</span></span>
+    <div style="display:flex;gap:7px;margin-bottom:17px" id="cswatches"></div>
+
+    <span style="font-size:10px;font-weight:500;color:var(--n);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;display:block">Size</span>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:17px">
+      <div class="sopt on" data-size="55cm" onclick="selSz(this)"><span style="font-size:11.5px;font-weight:500;color:var(--n);display:block">55cm</span><span style="font-size:10px;color:var(--sl);display:block;margin-top:1px">Cabin · 40L</span><span style="font-size:10px;color:var(--sl);display:block">Packs for 1–3 days</span></div>
+      <div class="sopt" data-size="68cm" onclick="selSz(this)"><span style="font-size:11.5px;font-weight:500;color:var(--n);display:block">68cm</span><span style="font-size:10px;color:var(--sl);display:block;margin-top:1px">Check-In · 70L</span><span style="font-size:10px;color:var(--sl);display:block">Packs for 4–7 days</span></div>
+      <div class="sopt" data-size="76cm" onclick="selSz(this)"><span style="font-size:11.5px;font-weight:500;color:var(--n);display:block">76cm</span><span style="font-size:10px;color:var(--sl);display:block;margin-top:1px">Large · 110L</span><span style="font-size:10px;color:var(--sl);display:block">Packs for 7+ days</span></div>
+    </div>
+
+    <div class="ptrust">
+      <div class="pti"><span style="font-size:14px;display:block;margin-bottom:1px">🛡</span><div style="font-size:9px;color:var(--sl);line-height:1.3">10-Year<br>Warranty</div></div>
+      <div class="pti"><span style="font-size:14px;display:block;margin-bottom:1px">🚚</span><div style="font-size:9px;color:var(--sl);line-height:1.3">Free<br>Delivery</div></div>
+      <div class="pti"><span style="font-size:14px;display:block;margin-bottom:1px">↩️</span><div style="font-size:9px;color:var(--sl);line-height:1.3">30-Day<br>Returns</div></div>
+      <div class="pti"><span style="font-size:14px;display:block;margin-bottom:1px">💵</span><div style="font-size:9px;color:var(--sl);line-height:1.3">COD<br>Available</div></div>
+    </div>
+
+    <button id="pdp-add-btn" style="width:100%;background:var(--r);color:#fff;font-size:14px;font-weight:500;padding:14px;border:none;border-radius:9px;cursor:pointer;margin-bottom:8px;font-family:inherit;letter-spacing:.01em" onclick="addCurrentToCart()" onmouseover="this.style.background='#C42B1F'" onmouseout="this.style.background='var(--r)'">Add to Bag</button>
+    <button style="width:100%;background:var(--n);color:#fff;font-size:14px;font-weight:500;padding:14px;border:none;border-radius:9px;cursor:pointer;font-family:inherit" onclick="showPage('ck',3)" onmouseover="this.style.background='#0F2A4F'" onmouseout="this.style.background='var(--n)'">Buy Now</button>
+
+    <div style="font-size:11px;color:var(--r);font-weight:500;margin-top:10px;display:flex;align-items:center;gap:5px">
+      <span class="pd"></span> Only 6 left in Midnight Navy — order soon
+    </div>
+    <div style="margin-top:12px;padding:10px 12px;background:var(--ow);border-radius:7px;font-size:11.5px;color:var(--sl);display:flex;gap:7px;align-items:center">
+      <span style="color:#25D366;font-size:14px">💬</span>
+      <span>Questions? Chat on <strong style="color:var(--n)">WhatsApp</strong> · Replies in under 2 min</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- FEATURE MODULES -->
+<section style="padding:40px 5%;background:var(--ow)">
+  <div style="text-align:center;margin-bottom:6px">
+    <span class="ey">What's Inside</span>
+    <h2 class="st">Built for how you travel</h2>
+  </div>
+  <div id="fmods"></div>
+</section>
+
+<!-- COMPARISON -->
+<section style="padding:40px 5%;background:#fff">
+  <span class="ey">Compare</span>
+  <h2 class="st">How does it stack up?</h2>
+  <table style="width:100%;border-collapse:collapse;margin-top:20px;font-size:12.5px">
+    <thead>
+      <tr>
+        <th style="background:var(--n);color:#fff;padding:10px 13px;font-size:11.5px;font-weight:500;text-align:left">Feature</th>
+        <th style="background:var(--r);color:#fff;padding:10px 13px;font-size:11.5px;font-weight:500;text-align:left">Trento Spinner 55cm</th>
+        <th style="background:var(--n);color:#fff;padding:10px 13px;font-size:11.5px;font-weight:500;text-align:left">Circurity + Spinner 57cm</th>
+        <th style="background:var(--n);color:#fff;padding:10px 13px;font-size:11.5px;font-weight:500;text-align:left">Airconic 2.0 Spinner 55 cm</th>
+      </tr>
+    </thead>
+    <tbody id="cmptbl"></tbody>
+  </table>
+</section>
+
+<!-- REVIEWS -->
+<section style="padding:40px 5%;background:var(--ow)" id="revs">
+  <span class="ey">Reviews</span>
+  <h2 class="st">What travelers are saying</h2>
+  <div class="rsm" id="revsum"></div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px" id="rl"></div>
+  <div style="text-align:center;margin-top:18px"><button class="btn-ro">See all 2,847 reviews</button></div>
+</section>
+
+<!-- CROSS-SELL -->
+<section style="padding:40px 5%;background:#fff">
+  <span class="ey">Complete the Set</span>
+  <h2 class="st">Pack the full setup</h2>
+  <div style="background:var(--ow);border-radius:13px;padding:16px;margin-top:18px;margin-bottom:16px;display:flex;gap:12px;align-items:center;border:1.5px solid var(--r)">
+    <div id="bndlvis" style="display:flex;gap:8px;align-items:center;flex-shrink:0"></div>
+    <div style="flex:1">
+      <div style="font-size:9.5px;color:var(--r);font-weight:500;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Bundle Offer</div>
+      <div style="font-size:14.5px;font-weight:500;color:var(--n);margin-bottom:2px">Cabin + Check-In Set</div>
+      <div style="font-size:11.5px;color:var(--sl)">Trento 55cm + 68cm</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:6px">
+        <span style="font-size:16px;font-weight:500;color:var(--n)">₹9,499</span>
+        <span style="font-size:12px;color:var(--g4);text-decoration:line-through">₹11,998</span>
+        <span style="font-size:11px;background:#E5F3EC;color:#1A7A4A;padding:2px 7px;border-radius:4px">Save ₹2,499</span>
+      </div>
+    </div>
+    <button class="btn-r" style="flex-shrink:0">Add Bundle →</button>
+  </div>
+  <div class="pg4" id="xsg"></div>
+</section>
+
+<!-- STICKY ATC -->
+<div style="background:var(--n);padding:11px 5%;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.08)">
+  <div style="flex:1">
+    <div id="sticky-pdp-name" style="color:rgba(255,255,255,.65);font-size:11px">Trento Spinner 55 cm · Midnight Navy</div>
+    <div style="color:#fff;font-size:15.5px;font-weight:500"><span id="sticky-pdp-price">₹6,075</span> <span id="sticky-pdp-mrp" style="font-size:12px;color:rgba(255,255,255,.4);text-decoration:line-through;font-weight:400">₹8,100</span></div>
+  </div>
+  <button id="sticky-add-btn" style="background:var(--r);color:#fff;font-size:12px;font-weight:500;padding:9px 18px;border:none;border-radius:7px;cursor:pointer;font-family:inherit" onclick="addCurrentToCart()">Add to Bag</button>
+  <button style="background:rgba(255,255,255,.1);color:#fff;font-size:12px;font-weight:500;padding:9px 18px;border:none;border-radius:7px;cursor:pointer;font-family:inherit" onclick="showPage('ck',3)">Buy Now</button>
+</div>
+</div>
+
+<!-- ══════════════════════ PAGE: CHECKOUT ══════════════════════ -->
+<div id="pg-ck" class="page">
+
+<div class="ckhead">
+  <a class="logo" href="#" onclick="showPage('home',0);return false" aria-label="American Tourister home">
+    <img src="https://americantourister.in/cdn/shop/files/615-2023_03_31-AT_Logo_200x50__1.webp?v=1742636999&width=280" alt="American Tourister">
+  </a>
+  <div style="display:flex;align-items:center">
+    <div style="display:flex;align-items:center;gap:6px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.45)">
+      <div style="width:18px;height:18px;border-radius:50%;background:#1A7A4A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500">✓</div> Cart
+    </div>
+    <div style="width:24px;height:1px;background:rgba(255,255,255,.1)"></div>
+    <div style="display:flex;align-items:center;gap:6px;padding:4px 12px;font-size:11px;color:#fff">
+      <div style="width:18px;height:18px;border-radius:50%;background:var(--r);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500">2</div> Details
+    </div>
+    <div style="width:24px;height:1px;background:rgba(255,255,255,.1)"></div>
+    <div style="display:flex;align-items:center;gap:6px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.35)">
+      <div style="width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.1);color:rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500">3</div> Payment
+    </div>
+  </div>
+  <div style="width:180px"></div>
+</div>
+
+<div class="ckwrap">
+<div style="padding:22px 5%;background:var(--ow)">
+
+  <div class="cksec">
+    <div style="font-size:14px;font-weight:500;color:var(--n);margin-bottom:13px">Contact information</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px">
+      <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">Mobile number</label>
+        <input class="fi f" value="+91 98765 43210" type="tel"/>
+      </div>
+      <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">Email address</label>
+        <input class="fi" placeholder="your@email.com" type="email"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="cksec">
+    <div style="font-size:14px;font-weight:500;color:var(--n);margin-bottom:13px">Shipping address</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px">
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">First name</label>
+        <input class="fi f" value="Rohit" type="text"/>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">Last name</label>
+        <input class="fi f" value="Sharma" type="text"/>
+      </div>
+      <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">Address</label>
+        <input class="fi" placeholder="Flat/House no., Street name" type="text"/>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">City</label>
+        <input class="fi f" value="Mumbai" type="text"/>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">PIN Code</label>
+        <input class="fi" placeholder="400001" type="text" maxlength="6"/>
+      </div>
+      <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:3px">
+        <label style="font-size:9.5px;font-weight:500;color:var(--sl);text-transform:uppercase;letter-spacing:.07em">State</label>
+        <select class="fi"><option>Maharashtra</option><option>Karnataka</option><option>Delhi</option><option>Tamil Nadu</option><option>Gujarat</option></select>
+      </div>
+    </div>
+  </div>
+
+  <div class="cksec">
+    <div style="font-size:14px;font-weight:500;color:var(--n);margin-bottom:13px">Delivery</div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <div class="dlopt on">
+        <div class="dlrad"></div>
+        <div style="flex:1"><div style="font-size:12.5px;font-weight:500;color:var(--n)">Standard Delivery</div><div style="font-size:11px;color:var(--sl)">Delivered in 4–6 business days · Tracked</div></div>
+        <span style="font-size:12.5px;font-weight:500;color:#1A7A4A">FREE</span>
+      </div>
+      <div class="dlopt" onclick="selDl(this)">
+        <div class="dlrad"></div>
+        <div style="flex:1"><div style="font-size:12.5px;font-weight:500;color:var(--n)">Express Delivery</div><div style="font-size:11px;color:var(--sl)">Delivered in 1–2 business days · Tracked</div></div>
+        <span style="font-size:12.5px;font-weight:500;color:var(--n)">₹149</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cksec">
+    <div style="font-size:14px;font-weight:500;color:var(--n);margin-bottom:13px">Payment method</div>
+    <div class="pm on">
+      <div class="pmh">
+        <div style="width:32px;height:20px;background:#EEF4FF;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#2563EB;flex-shrink:0">UPI</div>
+        <span style="font-size:12.5px;font-weight:500;color:var(--n);flex:1">UPI</span>
+        <span style="font-size:9px;background:#E5F3EC;color:#1A7A4A;padding:2px 6px;border-radius:3px">Instant · Recommended</span>
+      </div>
+      <div class="pmb">
+        <input class="fi" placeholder="Enter UPI ID (e.g. name@okaxis)" style="margin-bottom:8px" type="text"/>
+        <div style="display:flex;gap:7px;flex-wrap:wrap">
+          <div style="padding:5px 11px;border:1px solid var(--bd);border-radius:5px;font-size:11.5px;cursor:pointer;color:var(--sl)">PhonePe</div>
+          <div style="padding:5px 11px;border:1px solid var(--bd);border-radius:5px;font-size:11.5px;cursor:pointer;color:var(--sl)">Google Pay</div>
+          <div style="padding:5px 11px;border:1px solid var(--bd);border-radius:5px;font-size:11.5px;cursor:pointer;color:var(--sl)">Paytm</div>
+        </div>
+      </div>
+    </div>
+    <div class="pm" onclick="selPm(this)">
+      <div class="pmh">
+        <div style="width:32px;height:20px;background:var(--g1);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:8.5px;font-weight:600;color:var(--sl);flex-shrink:0">CARD</div>
+        <span style="font-size:12.5px;font-weight:500;color:var(--n);flex:1">Credit / Debit Card</span>
+        <span style="font-size:10.5px;color:var(--sl)">EMI available on ₹5,000+</span>
+      </div>
+    </div>
+    <div class="pm" onclick="selPm(this)">
+      <div class="pmh">
+        <div style="width:32px;height:20px;background:#FFF8E7;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:8.5px;font-weight:700;color:#BA7517;flex-shrink:0">COD</div>
+        <span style="font-size:12.5px;font-weight:500;color:var(--n);flex:1">Cash on Delivery</span>
+        <span style="font-size:10.5px;color:var(--sl)">₹49 handling fee</span>
+      </div>
+    </div>
+    <div class="pm" onclick="selPm(this)">
+      <div class="pmh">
+        <div style="width:32px;height:20px;background:var(--g1);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:8.5px;font-weight:600;color:var(--sl);flex-shrink:0">NET</div>
+        <span style="font-size:12.5px;font-weight:500;color:var(--n)">Net Banking</span>
+      </div>
+    </div>
+  </div>
+
+  <button id="place-order-btn" style="width:100%;background:var(--r);color:#fff;font-size:14.5px;font-weight:500;padding:15px;border:none;border-radius:9px;cursor:pointer;font-family:inherit;letter-spacing:.01em" onmouseover="this.style.background='#C42B1F'" onmouseout="this.style.background='var(--r)'">
+    Place Order — ₹6,075 →
+  </button>
+  <div style="text-align:center;margin-top:10px;font-size:10.5px;color:var(--sl)">
+    🔒 Secured by Razorpay &nbsp;·&nbsp; ✓ SSL Encrypted &nbsp;·&nbsp; 🛡 100% Purchase Protection
+  </div>
+</div>
+
+<!-- ORDER SUMMARY -->
+<div style="background:#fff;padding:20px;border-left:.5px solid var(--bd)">
+  <div style="font-size:14px;font-weight:500;color:var(--n);margin-bottom:13px;padding-bottom:11px;border-bottom:.5px solid var(--bd)">
+    Order Summary <span style="font-size:11.5px;color:var(--sl);font-weight:400">(1 item)</span>
+  </div>
+  <div class="perkcard" id="checkout-perks" style="background:var(--ow)">
+    <div class="perkmsg" id="checkout-perk-msg">YOU ARE <strong>₹1,924</strong> AWAY FROM FLAT500.</div>
+    <div class="perksub" id="checkout-perk-sub">Congratulations, you have unlocked 5% OFF.</div>
+    <div class="perkbar">
+      <div class="perkfill" id="checkout-perk-fill" style="width:76%"></div>
+    </div>
+    <div class="perkpts">
+      <div class="perkpt on" id="checkout-perk-free">
+        <div class="perkdot">✓</div>
+        <div class="perklabel">FREE DELIVERY</div>
+      </div>
+      <div class="perkpt on" id="checkout-perk-discount">
+        <div class="perkdot">%</div>
+        <div class="perklabel">5% OFF</div>
+      </div>
+      <div class="perkpt" id="checkout-perk-flat">
+        <div class="perkdot">₹</div>
+        <div class="perklabel">FLAT500</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;padding-bottom:12px;border-bottom:.5px solid var(--bd)">
+    <div id="ckimg" style="width:56px;height:56px;background:var(--g1);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden"></div>
+    <div style="flex:1">
+      <div id="checkout-name" style="font-size:12.5px;font-weight:500;color:var(--n);margin-bottom:1px">Trento Spinner</div>
+      <div id="checkout-variant" style="font-size:11px;color:var(--sl)">55cm · Midnight Navy</div>
+      <div style="font-size:11px;color:var(--sl);margin-top:2px">Qty: 1</div>
+    </div>
+    <div id="checkout-item-price" style="font-size:13.5px;font-weight:500;color:var(--n)">₹6,075</div>
+  </div>
+  <div style="margin-bottom:12px">
+    <div style="font-size:11px;color:var(--sl);margin-bottom:7px">Have a promo code?</div>
+    <div style="display:flex;gap:7px">
+      <input class="fi" placeholder="Enter code (e.g. SAVE300)" type="text" style="font-size:12px"/>
+      <button style="background:var(--ow);border:1px solid var(--bd);border-radius:6px;padding:8px 12px;font-size:11.5px;font-weight:500;color:var(--n);cursor:pointer;font-family:inherit;white-space:nowrap">Apply</button>
+    </div>
+  </div>
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px;color:var(--sl)"><span>Subtotal</span><span id="checkout-subtotal">₹6,075</span></div>
+    <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px;color:var(--sl)"><span>MRP Total</span><span id="checkout-mrp" style="text-decoration:line-through;color:var(--g4)">₹8,100</span></div>
+    <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px;color:#1A7A4A"><span>Your Savings</span><span id="checkout-savings">−₹2,025</span></div>
+    <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px;color:var(--sl)"><span>Delivery</span><span style="color:#1A7A4A">FREE</span></div>
+    <div style="display:flex;justify-content:space-between;font-size:15px;font-weight:500;color:var(--n);padding-top:9px;border-top:.5px solid var(--bd);margin-top:3px"><span>Total</span><span id="checkout-total">₹6,075</span></div>
+  </div>
+  <div style="background:#E5F3EC;border-radius:7px;padding:9px 11px;font-size:11.5px;color:#1A7A4A;margin-bottom:12px;display:flex;gap:5px;align-items:center">
+    🎉 <span>You're saving <strong id="checkout-saving-highlight">₹2,025</strong> on this order!</span>
+  </div>
+  <div style="font-size:11px;color:var(--sl);line-height:1.8">
+    🛡 <strong style="color:var(--n)">10-Year Warranty</strong> included<br>
+    ↩️ Free returns within 30 days<br>
+    🚚 Estimated delivery: 4–6 business days
+  </div>
+</div>
+</div>
+</div>
+
+<script>
+var N='#0B1F3A',R='#E63024',TEAL='#0E7E74',BURG='#8B1A32',BLK='#1A1A1A',PUR='#5B3B8C',SAND='#8B7355',PINK='#C2196B';
+var cartItems=[];
+
+function bag(c,w,h){
+  w=w||80;h=h||96;
+  return '<svg width="'+w+'" height="'+h+'" viewBox="0 0 80 98" fill="none">'
+    +'<rect x="24" y="1" width="32" height="10" rx="4" fill="rgba(0,0,0,.22)"/>'
+    +'<rect x="31" y="0" width="7" height="13" rx="3" fill="rgba(0,0,0,.18)"/>'
+    +'<rect x="42" y="0" width="7" height="13" rx="3" fill="rgba(0,0,0,.18)"/>'
+    +'<rect x="6" y="12" width="68" height="78" rx="9" fill="'+c+'"/>'
+    +'<rect x="6" y="49" width="68" height="2.5" fill="rgba(0,0,0,.12)"/>'
+    +'<rect x="34" y="39" width="12" height="9" rx="2" fill="rgba(0,0,0,.2)"/>'
+    +'<ellipse cx="18" cy="95" rx="8" ry="5" fill="#080808" opacity=".38"/>'
+    +'<ellipse cx="62" cy="95" rx="8" ry="5" fill="#080808" opacity=".38"/>'
+    +'</svg>';
+}
+
+// PAGE SWITCHER
+function showPage(id,idx){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('on')});
+  document.getElementById('pg-'+id).classList.add('on');
+  document.querySelectorAll('.dbtn').forEach(function(b,i){b.classList.toggle('on',i===idx)});
+  window.scrollTo(0,0);
+  var nav=document.getElementById('sitenav');
+  if(id==='ck'){nav.style.display='none'}else{nav.style.display='flex'}
+  closeCart();
+}
+
+// TRUST BAR
+var tItems=[
+  ['🛡','10-Year Warranty'],['🚚','Free Delivery Pan-India'],
+  ['↩️','30-Day Returns'],['★','Rated 4.8 by 50K+'],['💵','COD Available']
+];
+var tb=document.getElementById('tbar');
+tItems.forEach(function(t){
+  tb.innerHTML+='<div style="display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.72);font-size:11px"><span>'+t[0]+'</span>'+t[1]+'</div>'
+});
+
+// CATEGORY TILES
+var ctData=[
+  {cls:'ct1',bdg:'From ₹2,999',col:N,ttl:'Cabin Bags',sub:'Carry-on approved, domestic & intl.',sc:80,sh:96,img:'/Users/rohit/Downloads/Cabin.png'},
+  {cls:'ct2',bdg:'From ₹4,499',col:PUR,ttl:'Check-In Bags',sub:'Medium & large for longer journeys',sc:72,sh:110,img:'/Users/rohit/Downloads/Gemini_Generated_Image_qw456aqw456aqw45.png'},
+  {cls:'ct3',bdg:'Save up to 20%',col:TEAL,ttl:'Luggage Sets',sub:'Cabin + check-in, perfectly matched',sc:64,sh:90,img:'/Users/rohit/Downloads/Luggage Set.png'}
+];
+var ctg=document.getElementById('ctg');
+ctData.forEach(function(d,i){
+  ctg.innerHTML+='<div class="ct '+d.cls+'" onclick="showPage(\'cat\',1)">'
+    +(d.img?'<img class="ctimg" src="'+d.img+'" alt="'+d.ttl+'">':'')
+    +'<span class="ct-bdg">'+d.bdg+'</span>'
+    +'<div class="ct-c"><h3>'+d.ttl+'</h3><p>'+d.sub+'</p><span>Explore →</span></div>'
+    +'</div>'
+});
+
+// PRODUCTS DATA
+var PRODS=[
+  {nm:'Airconic 2.0',mt:'55cm · Smart Cabin · Hard Shell',pr:'₹4,999',mr:'₹7,999',off:'37%',c:N,bdg:'Bestseller',bc:'#E63024',cols:[N,R,BLK,TEAL],img:'/Users/rohit/Downloads/bestseller.webp'},
+  {nm:'Trento 8W',mt:'68cm · Check-in · Hard Shell',pr:'₹5,999',mr:'₹9,999',off:'40%',c:R,bdg:'Top Rated',bc:'#0B1F3A',cols:[R,N,PUR,BLK],img:'/Users/rohit/Downloads/Top Rated.webp'},
+  {nm:'Bern Spinner 60 cm',mt:'60cm · Cabin · Soft Shell',pr:'₹7,499',mr:'₹12,999',off:'42%',c:BLK,bdg:'New',bc:'#333',cols:[BLK,N,TEAL,PUR],img:'/Users/rohit/Downloads/New.webp'},
+  {nm:'AT × Masaba Set',mt:'Cabin + Check-In · 2pc',pr:'₹9,499',mr:'₹15,999',off:'40%',c:PINK,bdg:'Collab',bc:'#8B1A32',cols:[PINK,'#F5A623',R,N],img:'/Users/rohit/Downloads/AT+Masaba.png'}
+];
+
+function makeCard(p,onclick){
+  var swHtml=p.cols.map(function(c,i){
+    return '<div class="sw'+(i===0?' on':'')+'" style="background:'+c+'"></div>'
+  }).join('');
+  return '<div class="pc"'+(onclick?' onclick="'+onclick+'"':'')+' >'
+    +'<div class="pi">'
+    +'<span class="pbdg" style="background:'+p.bc+'">'+p.bdg+'</span>'
+    +(p.img?'<img src="'+p.img+'" alt="'+p.nm+'">':bag(p.c,70,84))
+    +'</div>'
+    +'<div class="pinfo">'
+    +'<div class="pname">'+p.nm+'</div>'
+    +'<div class="pmeta">'+p.mt+'</div>'
+    +'<div class="prat"><span class="stars">★★★★★</span><span style="font-size:11px;font-weight:500">4.8</span><span class="rc">(1.2k)</span></div>'
+    +'<div class="swatches">'+swHtml+'</div>'
+    +'<div class="ppr"><span class="sp">'+p.pr+'</span><span class="mp">'+p.mr+'</span><span class="op">'+p.off+' off</span></div>'
+    +'<button class="batc">Add to Bag</button>'
+    +'</div></div>'
+}
+
+// BESTSELLERS
+var bsg=document.getElementById('bsg');
+PRODS.forEach(function(p){bsg.innerHTML+=makeCard(p,"showPage('pdp',2)")});
+
+// FEATURES
+var fData=[
+  {ic:'⚙️',tt:'360° Silent Wheels',ds:'Japanese Hinomoto spinners tested for 10,000+ rotations. Glide on airport marble, cobblestones, or rough roads — completely silent.'},
+  {ic:'🛡',tt:'10-Year Warranty',ds:'Industry-best coverage. Shell crack, zipper failure, or wheel damage within 10 years — we repair or replace it. No questions, no receipts.'},
+  {ic:'✈️',tt:'TSA-Ready Design',ds:'All cabin sizes meet DGCA & major airline dimensions. Integrated TSA combination lock on all variants. Packs smarter than it looks.'}
+];
+var fgd=document.getElementById('fgd');
+fData.forEach(function(f){
+  fgd.innerHTML+='<div style="background:#fff;border-radius:12px;padding:20px">'
+    +'<div style="width:44px;height:44px;background:var(--n);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px">'+f.ic+'</div>'
+    +'<div style="font-size:14px;font-weight:500;color:var(--n);margin-bottom:4px">'+f.tt+'</div>'
+    +'<div style="font-size:12.5px;color:var(--sl);line-height:1.65">'+f.ds+'</div>'
+    +'</div>'
+});
+
+// COLLECTION SPOTLIGHT
+var cspot=document.getElementById('cspot');
+cspot.innerHTML='<div style="position:absolute;right:-50px;top:-50px;width:280px;height:280px;background:rgba(230,48,36,.07);border-radius:50%"></div>'
+  +'<div style="flex:1;position:relative;z-index:2">'
+  +'<span style="display:inline-block;background:rgba(245,236,215,.1);border:1px solid rgba(245,236,215,.2);color:var(--s);font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;margin-bottom:13px">Limited Collection</span>'
+  +'<h2 style="color:#fff;font-size:26px;font-weight:500;letter-spacing:-.025em;margin-bottom:8px;line-height:1.2">AT × Lovechild<br>by Masaba</h2>'
+  +'<p style="color:rgba(255,255,255,.5);font-size:13px;margin-bottom:20px;line-height:1.7;max-width:340px">Bold prints. Vibrant personality. The same 10-year AT durability underneath — now in limited-edition designs by Masaba Gupta.</p>'
+  +'<div style="display:flex;gap:10px;flex-wrap:wrap">'
+  +'<button class="btn-r">Shop Collection →</button>'
+  +'<button class="btn-w">Watch the Campaign</button>'
+  +'</div></div>'
+  +'<div style="flex-shrink:0;position:relative;z-index:2">'
+  +'<img src="/Users/rohit/Downloads/ATxMasaba.png" alt="AT x Masaba limited collection campaign visual">'
+  +'</div>';
+
+// STATS
+var stats=[['4.8★','Avg. product rating'],['50K+','Verified reviews'],['10 yrs','Best-in-class warranty'],['85%','Repurchase rate']];
+var sr=document.getElementById('sstats');
+stats.forEach(function(s){
+  sr.innerHTML+='<div style="text-align:center;padding:16px 10px;border:.5px solid var(--bd);border-radius:12px;background:var(--ow)">'
+    +'<div style="font-size:22px;font-weight:500;color:var(--n);letter-spacing:-.025em">'+s[0]+'</div>'
+    +'<div style="font-size:11px;color:var(--sl);margin-top:2px;line-height:1.4">'+s[1]+'</div>'
+    +'</div>'
+});
+
+// REVIEWS
+var revs=[
+  {nm:'Priya M., Mumbai',st:5,tx:'"Travelled to 6 countries in 2 years with this bag. Not a single scratch. The wheels are still as smooth as day one. Worth every rupee."',pd:'Polaris 55cm · Midnight Navy'},
+  {nm:'Rahul K., Hyderabad',st:5,tx:'"Bought the set for our family Europe trip. Loved how it looked on the carousel — turned heads at Zurich. Plus everything fit perfectly."',pd:'Linex Plus Set · Teal'},
+  {nm:'Ananya S., Bengaluru',st:5,tx:'"The 10-year warranty is real. My zipper broke in year 3. AT sent a replacement in 48 hrs. That\'s why I\'ll only buy American Tourister."',pd:'Starvibe 79cm · Black'}
+];
+var rg=document.getElementById('rg');
+revs.forEach(function(rv){
+  rg.innerHTML+='<div style="border:.5px solid var(--bd);border-radius:12px;padding:15px">'
+    +'<div style="color:#F5A623;font-size:11px;margin-bottom:6px">★★★★★</div>'
+    +'<p style="font-size:12.5px;color:var(--sl);line-height:1.65;margin-bottom:8px;font-style:italic">'+rv.tx+'</p>'
+    +'<div style="font-size:12px;font-weight:500;color:var(--n)">'+rv.nm+'</div>'
+    +'<div style="font-size:10.5px;color:var(--sl);margin-top:1px">'+rv.pd+'</div>'
+    +'</div>'
+});
+
+// FOOTER
+var ft=document.getElementById('ft');
+ft.innerHTML='<div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px;margin-bottom:22px">'
+  +'<div><h3 style="color:#fff;font-size:15.5px;font-weight:500;margin-bottom:7px">American<b style="color:var(--r);font-weight:500">Tourister</b></h3>'
+  +'<p style="font-size:11px;line-height:1.7;color:rgba(255,255,255,.38);margin-bottom:11px">Built for the way India travels. Trusted by 50M+ travelers globally.</p>'
+  +'<div style="display:flex;gap:7px">'+['in','ig','yt','fb'].map(function(s){return '<a href="#" style="width:28px;height:28px;background:rgba(255,255,255,.07);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:rgba(255,255,255,.45);text-decoration:none">'+s+'</a>'}).join('')+'</div></div>'
+  +[['Shop',['Cabin Bags','Check-In Bags','Luggage Sets','Backpacks','Accessories','Clearance Sale']],
+    ['Help',['Track Order','Returns','Warranty Claim','Size Guide','Contact Us','Store Locator']],
+    ['Company',['About AT','Brand Story','Travel World','Careers','Press','Sustainability']]
+  ].map(function(col){
+    return '<div><h4 style="color:rgba(255,255,255,.65);font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;margin-bottom:9px">'+col[0]+'</h4><ul style="list-style:none;display:flex;flex-direction:column;gap:5px">'+col[1].map(function(l){return '<li><a href="#" style="color:rgba(255,255,255,.35);font-size:11.5px;text-decoration:none">'+l+'</a></li>'}).join('')+'</ul></div>'
+  }).join('')+'</div>'
+  +'<div style="padding-top:16px;border-top:.5px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,.22)">'
+  +'<span>© 2025 American Tourister India. All rights reserved.</span><span>Privacy · Terms · Sitemap</span></div>';
+
+// CATEGORY PAGE
+var fbar=document.getElementById('fbar');
+fbar.innerHTML='<span style="font-size:11px;font-weight:500;color:var(--sl);margin-right:3px">Filter:</span>';
+['All (24)','Hard Shell','Under ₹5,000','4★ & above','New Arrivals','TSA Lock','Business Travel'].forEach(function(f,i){
+  fbar.innerHTML+='<button onclick="this.classList.toggle(\'on\')" style="font-size:11px;padding:4px 12px;border:1px solid var(--bd);border-radius:99px;background:'+(i===0?'var(--n)':'#fff')+';color:'+(i===0?'#fff':'var(--sl)')+';cursor:pointer;font-family:inherit;transition:all .15s">'+f+'</button>'
+});
+
+var catProds=[
+  {nm:'Polaris Spinner 55cm',mt:'Hard Shell · 4-Wheel · 40L',pr:'₹4,999',mr:'₹7,999',off:'37%',c:N,bdg:'Bestseller',bc:'#E63024',cols:[N,R,BLK,TEAL]},
+  {nm:'Curio Spinner 55cm',mt:'Hard Shell · 4-Wheel · 36L',pr:'₹3,999',mr:'₹6,499',off:'38%',c:R,bdg:'Under ₹4K',bc:'#1A7A4A',cols:[R,N,PUR,TEAL]},
+  {nm:'Linex Plus Cabin',mt:'Hard Shell · 4-Wheel · 42L',pr:'₹4,499',mr:'₹6,999',off:'35%',c:TEAL,bdg:'New',bc:'#0B1F3A',cols:[TEAL,N,BLK,SAND]},
+  {nm:'Pulsonic Cabin',mt:'Hard Shell · 4-Wheel · 38L',pr:'₹3,499',mr:'₹5,499',off:'36%',c:PUR,bdg:'Sale',bc:'#E63024',cols:[PUR,BLK,N,R]},
+  {nm:'Starvibe Cabin',mt:'Hard Shell · 4-Wheel · 40L',pr:'₹5,499',mr:'₹8,999',off:'38%',c:BLK,bdg:'Premium',bc:'#333',cols:[BLK,N,TEAL,BURG]},
+  {nm:'Twister Cabin',mt:'Hard Shell · 4-Wheel · 36L',pr:'₹3,299',mr:'₹5,999',off:'45%',c:BURG,bdg:'Sale',bc:'#E63024',cols:[BURG,R,N,BLK]}
+];
+var cpg=document.getElementById('cpg');
+catProds.forEach(function(p){cpg.innerHTML+=makeCard(p,"showPage('pdp',2)")});
+
+// PDP GALLERY
+var mi=document.getElementById('mainimg');
+var pdpImages=[
+  '/Users/rohit/Downloads/PDP1.webp',
+  '/Users/rohit/Downloads/PDP2.webp',
+  '/Users/rohit/Downloads/PDP3.webp',
+  '/Users/rohit/Downloads/PDP4.webp',
+  '/Users/rohit/Downloads/PDP5.webp',
+  '/Users/rohit/Downloads/PDP6.webp'
+];
+mi.innerHTML='<img src="'+pdpImages[0]+'" alt="Trento Spinner product image 1" style="width:100%;height:100%;object-fit:contain;display:block">';
+var trs=document.getElementById('thumbs');
+pdpImages.forEach(function(src,i){
+  trs.innerHTML+='<div class="thumb'+(i===0?' on':'')+'" onclick="selThumb(this,\''+src+'\','+(i+1)+')">'
+    +'<img src="'+src+'" alt="Trento Spinner thumbnail '+(i+1)+'">'
+    +'</div>'
+});
+
+function selThumb(el,src,index){
+  document.querySelectorAll('.thumb').forEach(function(t){t.classList.remove('on')});
+  el.classList.add('on');
+  document.getElementById('mainimg').innerHTML='<img src="'+src+'" alt="Trento Spinner product image '+index+'" style="width:100%;height:100%;object-fit:contain;display:block">';
+}
+
+function openPdpZoom(){
+  var active=document.querySelector('#mainimg img');
+  if(!active){return}
+  document.getElementById('pdp-zoom-img').src=active.src;
+  document.getElementById('pdp-zoom-img').alt=active.alt;
+  document.getElementById('pdp-zoom').classList.add('on');
+}
+
+function closePdpZoom(){
+  document.getElementById('pdp-zoom').classList.remove('on');
+}
+
+// COLOR SWATCHES
+var cswData=[[N,'Midnight Navy'],[R,'Racing Red'],[BLK,'Stealth Black'],[TEAL,'Petrol Green'],[BURG,'Deep Burgundy'],[SAND,'Desert Sand']];
+var csw=document.getElementById('cswatches');
+cswData.forEach(function(c,i){
+  csw.innerHTML+='<div class="csw'+(i===0?' on':'')+'" style="background:'+c[0]+'" data-name="'+c[1]+'" onclick="selColor(this)"></div>'
+});
+
+function selColor(el){
+  document.querySelectorAll('.csw').forEach(function(s){s.classList.remove('on')});
+  el.classList.add('on');
+  document.getElementById('cname').textContent=el.dataset.name;
+  updatePdpSelection();
+}
+
+var sizeData={
+  '55cm':{kicker:'Hard Luggage · Cabin · 4-Wheel Spinner',name:'Trento Spinner 55 cm',price:'₹6,075',mrp:'₹8,100',off:'25% off',savings:'₹2,025'},
+  '68cm':{kicker:'Hard Luggage · Check-In · 4-Wheel Spinner',name:'Trento Spinner 68 cm',price:'₹7,500',mrp:'₹11,500',off:'29% off',savings:'₹4,000'},
+  '76cm':{kicker:'Hard Luggage · Large · 4-Wheel Spinner',name:'Trento Spinner 76 cm',price:'₹9,000',mrp:'₹14,500',off:'36% off',savings:'₹5,500'}
+};
+
+function updatePdpSelection(){
+  var activeSize=document.querySelector('.sopt.on');
+  if(!activeSize){return}
+  var sz=activeSize.dataset.size;
+  var data=sizeData[sz];
+  var color=document.getElementById('cname').textContent;
+  document.getElementById('pdp-breadcrumb-name').textContent=data.name;
+  document.getElementById('pdp-kicker').textContent=data.kicker;
+  document.getElementById('pdp-name').textContent=data.name;
+  document.getElementById('pdp-price').textContent=data.price;
+  document.getElementById('pdp-mrp').textContent=data.mrp;
+  document.getElementById('pdp-off').textContent=data.off;
+  document.getElementById('sticky-pdp-name').textContent=data.name+' · '+color;
+  document.getElementById('sticky-pdp-price').textContent=data.price;
+  document.getElementById('sticky-pdp-mrp').textContent=data.mrp;
+  document.getElementById('place-order-btn').textContent='Place Order — '+data.price+' →';
+  document.getElementById('checkout-name').textContent='Trento Spinner';
+  document.getElementById('checkout-variant').textContent=sz+' · '+color;
+  document.getElementById('checkout-item-price').textContent=data.price;
+  document.getElementById('checkout-subtotal').textContent=data.price;
+  document.getElementById('checkout-mrp').textContent=data.mrp;
+  document.getElementById('checkout-savings').textContent='−'+data.savings;
+  document.getElementById('checkout-total').textContent=data.price;
+  document.getElementById('checkout-saving-highlight').textContent=data.savings;
+  if(!cartItems.length){syncCheckoutPreview()}
+}
+
+function selSz(el){
+  document.querySelectorAll('.sopt').forEach(function(s){s.classList.remove('on')});
+  el.classList.add('on');
+  updatePdpSelection();
+}
+
+function currentSelection(){
+  var activeSize=document.querySelector('.sopt.on');
+  var size=activeSize?activeSize.dataset.size:'55cm';
+  var color=document.getElementById('cname').textContent;
+  var colorNode=document.querySelector('.csw.on');
+  var colorHex=colorNode?colorNode.style.background:N;
+  var data=sizeData[size];
+  return {
+    id:'trento-'+size+'-'+color.toLowerCase().replace(/\s+/g,'-'),
+    name:'Trento Spinner',
+    fullName:data.name,
+    size:size,
+    color:color,
+    price:data.price,
+    mrp:data.mrp,
+    savings:data.savings,
+    off:data.off,
+    art:colorHex
+  };
+}
+
+function formatAmount(v){
+  return '₹'+v.toLocaleString('en-IN');
+}
+
+function parseMoney(str){
+  return Number(String(str).replace(/[^\d]/g,''))||0;
+}
+
+function perkState(total){
+  var delivery=1;
+  var discount=2500;
+  var flat=7999;
+  var fill=Math.max(0,Math.min(100,(total/flat)*100));
+  var msg='ADD ITEMS TO UNLOCK YOUR TRAVEL PERKS.';
+  var sub='Free delivery, 5% OFF, and FLAT500 will appear as your cart grows.';
+  if(total>=flat){
+    msg='Congratulations, you have unlocked <strong>FLAT500</strong>.';
+    sub='Free delivery and 5% OFF are already active on this cart.';
+  }else if(total>=discount){
+    msg='YOU ARE <strong>'+formatAmount(flat-total)+'</strong> AWAY FROM FLAT500.';
+    sub='Congratulations, you have unlocked 5% OFF.';
+  }else if(total>0){
+    msg='YOU ARE <strong>'+formatAmount(discount-total)+'</strong> AWAY FROM 5% OFF.';
+    sub='Free delivery is active. Add more to unlock the next reward.';
+  }
+  return {
+    fill:fill,
+    msg:msg,
+    sub:sub,
+    freeOn:total>=delivery,
+    discountOn:total>=discount,
+    flatOn:total>=flat
+  };
+}
+
+function renderPerks(prefix,total){
+  var state=perkState(total);
+  document.getElementById(prefix+'-perk-msg').innerHTML=state.msg;
+  document.getElementById(prefix+'-perk-sub').textContent=state.sub;
+  document.getElementById(prefix+'-perk-fill').style.width=state.fill+'%';
+  document.getElementById(prefix+'-perk-free').classList.toggle('on',state.freeOn);
+  document.getElementById(prefix+'-perk-discount').classList.toggle('on',state.discountOn);
+  document.getElementById(prefix+'-perk-flat').classList.toggle('on',state.flatOn);
+}
+
+function cartTotals(){
+  return cartItems.reduce(function(acc,item){
+    acc.qty+=item.qty;
+    acc.subtotal+=parseMoney(item.price)*item.qty;
+    acc.mrp+=parseMoney(item.mrp)*item.qty;
+    return acc;
+  },{qty:0,subtotal:0,mrp:0});
+}
+
+function updateCartBadge(){
+  var totals=cartTotals();
+  document.getElementById('cart-count').textContent=totals.qty?String(totals.qty):'';
+}
+
+function syncCheckoutPreview(){
+  if(cartItems.length){
+    var item=cartItems[0];
+    var subtotal=parseMoney(item.price)*item.qty;
+    var mrp=parseMoney(item.mrp)*item.qty;
+    var savings=mrp-subtotal;
+    document.getElementById('ckimg').innerHTML=bag(item.art,44,52);
+    document.getElementById('checkout-name').textContent=item.name;
+    document.getElementById('checkout-variant').textContent=item.size+' · '+item.color+' · Qty: '+item.qty;
+    document.getElementById('checkout-item-price').textContent=formatAmount(subtotal);
+    document.getElementById('checkout-subtotal').textContent=formatAmount(subtotal);
+    document.getElementById('checkout-mrp').textContent=formatAmount(mrp);
+    document.getElementById('checkout-savings').textContent='−'+formatAmount(savings);
+    document.getElementById('checkout-total').textContent=formatAmount(subtotal);
+    document.getElementById('checkout-saving-highlight').textContent=formatAmount(savings);
+    document.getElementById('place-order-btn').textContent='Place Order — '+formatAmount(subtotal)+' →';
+    renderPerks('checkout',subtotal);
+  }else{
+    var selection=currentSelection();
+    var subtotal=parseMoney(selection.price);
+    document.getElementById('ckimg').innerHTML=bag(selection.art,44,52);
+    document.getElementById('checkout-name').textContent=selection.name;
+    document.getElementById('checkout-variant').textContent=selection.size+' · '+selection.color;
+    document.getElementById('checkout-item-price').textContent=selection.price;
+    document.getElementById('checkout-subtotal').textContent=selection.price;
+    document.getElementById('checkout-mrp').textContent=selection.mrp;
+    document.getElementById('checkout-savings').textContent='−'+selection.savings;
+    document.getElementById('checkout-total').textContent=selection.price;
+    document.getElementById('checkout-saving-highlight').textContent=selection.savings;
+    document.getElementById('place-order-btn').textContent='Place Order — '+selection.price+' →';
+    renderPerks('checkout',subtotal);
+  }
+}
+
+function renderCart(){
+  var body=document.getElementById('cart-body');
+  var totals=cartTotals();
+  document.getElementById('cart-head-copy').textContent=totals.qty?totals.qty+' item'+(totals.qty>1?'s':'')+' ready for checkout':'No items added yet';
+  document.getElementById('cart-subtotal').textContent=formatAmount(totals.subtotal);
+  document.getElementById('cart-total').textContent=formatAmount(totals.subtotal);
+  document.getElementById('cart-checkout-btn').disabled=!totals.qty;
+  document.getElementById('cart-checkout-btn').style.opacity=totals.qty?'1':'.55';
+  document.getElementById('cart-checkout-btn').style.cursor=totals.qty?'pointer':'not-allowed';
+  if(!cartItems.length){
+    body.innerHTML='<div class="cartempty"><div style="font-size:36px">🧳</div><div style="font-size:15px;font-weight:500;color:var(--n)">Your bag is empty</div><div style="font-size:12px;max-width:220px">Add the Trento Spinner from the product page to see it here.</div></div>';
+  }else{
+    body.innerHTML=cartItems.map(function(item,idx){
+      return '<div class="cartitem">'
+        +'<div style="width:64px;height:64px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0">'+bag(item.art,40,48)+'</div>'
+        +'<div style="flex:1">'
+        +'<div style="font-size:13px;font-weight:500;color:var(--n)">'+item.name+'</div>'
+        +'<div style="font-size:11px;color:var(--sl);margin-top:2px">'+item.size+' · '+item.color+'</div>'
+        +'<div style="display:flex;align-items:center;gap:8px;margin-top:9px">'
+        +'<button class="qtybtn" type="button" onclick="changeCartQty('+idx+',-1)">−</button>'
+        +'<span style="font-size:11.5px;font-weight:500;color:var(--n)">Qty '+item.qty+'</span>'
+        +'<button class="qtybtn" type="button" onclick="changeCartQty('+idx+',1)">+</button>'
+        +'</div></div>'
+        +'<div style="text-align:right">'
+        +'<div style="font-size:13px;font-weight:500;color:var(--n)">'+formatAmount(parseMoney(item.price)*item.qty)+'</div>'
+        +'<div style="font-size:10.5px;color:var(--g4);text-decoration:line-through;margin-top:2px">'+formatAmount(parseMoney(item.mrp)*item.qty)+'</div>'
+        +'<button type="button" onclick="removeCartItem('+idx+')" style="margin-top:10px;border:none;background:transparent;color:var(--r);font-size:11px;cursor:pointer;font-family:inherit">Remove</button>'
+        +'</div></div>';
+    }).join('');
+  }
+  renderPerks('cart',totals.subtotal);
+  updateCartBadge();
+  syncCheckoutPreview();
+}
+
+function addCurrentToCart(){
+  var selection=currentSelection();
+  var existing=cartItems.find(function(item){return item.id===selection.id});
+  if(existing){
+    existing.qty+=1;
+  }else{
+    selection.qty=1;
+    cartItems=[selection];
+  }
+  renderCart();
+  openCart();
+}
+
+function changeCartQty(idx,delta){
+  if(!cartItems[idx]){return}
+  cartItems[idx].qty+=delta;
+  if(cartItems[idx].qty<=0){
+    cartItems.splice(idx,1);
+  }
+  renderCart();
+}
+
+function removeCartItem(idx){
+  cartItems.splice(idx,1);
+  renderCart();
+}
+
+function openCart(){
+  document.getElementById('cart-overlay').classList.add('on');
+  document.getElementById('cart-drawer').classList.add('on');
+}
+
+function closeCart(){
+  document.getElementById('cart-overlay').classList.remove('on');
+  document.getElementById('cart-drawer').classList.remove('on');
+}
+
+function proceedFromCart(){
+  if(!cartItems.length){return}
+  showPage('ck',3);
+}
+
+// FEATURE MODULES
+var fmData=[
+  {num:'01',bg:'#E8EFF8',icon:'⚙️',title:'Wheels that move at the speed of you',desc:'Japanese Hinomoto double-spinner wheels rotating a full 360°. Silent on airport marble, stable on cobblestones. Tested for 10,000+ rotations before they ever reach you.',pts:['Hinomoto premium spinners','Double-wheel stability system','Silent polyurethane construction'],rev:false},
+  {num:'02',bg:'#FFF8F0',icon:'📦',title:'Interior designed for Indian packing',desc:'Most Indian travelers know the struggle — packing for both hot and cold destinations, fitting those extra gifts on the return. The Polaris interior is engineered for this reality.',pts:['Dual-sided packing with divider','Built-in compression strap','Separate laundry/wet bag pocket'],rev:true},
+  {num:'03',bg:'#F0F5FF',icon:'🔒',title:'3-digit lock. Lifetime of secure travel.',desc:'TSA-approved integrated combination lock. Security screeners can open without damage. You set the combination. Works on both international and domestic routes.',pts:['TSA 007 approved lock','3-digit personal combination','Anti-cut reinforced zippers'],rev:false},
+  {num:'04',bg:'#E5F3EC',icon:'🛡',title:'10 years. Not a typo.',desc:'Every Polaris comes with our industry-best 10-year warranty. Shell crack, wheel failure, zipper damage — we fix it or replace it. Register online in 60 seconds. No receipts needed.',pts:['10-year manufacturing warranty','Register in 60 seconds online','200+ service centers across India'],rev:true}
+];
+var fmEl=document.getElementById('fmods');
+fmData.forEach(function(m){
+  var imgSide='<div style="height:190px;background:'+m.bg+';border-radius:13px;display:flex;align-items:center;justify-content:center;border:.5px solid var(--bd)">'
+    +'<div style="text-align:center"><div style="font-size:40px">'+m.icon+'</div>'
+    +'<div style="font-size:12px;font-weight:500;color:var(--n);margin-top:8px">'+m.pts[0]+'</div>'
+    +'<div style="font-size:11px;color:var(--sl);margin-top:3px">'+m.pts[1]+'</div>'
+    +'</div></div>';
+  var txtSide='<div>'
+    +'<div style="font-size:18px;font-weight:500;color:var(--n);margin-bottom:8px;letter-spacing:-.02em;line-height:1.25">'+m.title+'</div>'
+    +'<div style="font-size:12.5px;color:var(--sl);line-height:1.7;margin-bottom:11px">'+m.desc+'</div>'
+    +'<ul style="list-style:none;display:flex;flex-direction:column;gap:5px">'+m.pts.map(function(p){
+      return '<li style="font-size:11.5px;color:var(--sl);display:flex;align-items:center;gap:6px"><span style="width:4px;height:4px;border-radius:50%;background:var(--r);flex-shrink:0;display:inline-block"></span>'+p+'</li>'
+    }).join('')+'</ul></div>';
+  fmEl.innerHTML+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;padding:26px 0;border-bottom:.5px solid var(--bd)">'
+    +(m.rev?txtSide+imgSide:imgSide+txtSide)+'</div>'
+});
+
+// COMPARISON TABLE
+var cmpRows=[
+  ['Price','₹6,075','₹4,290','₹5,437'],
+  ['Shell Material','Polycarbonate','Polypropylene','Polypropylene'],
+  ['Volume (Ltr)','34L','34L','35.5L'],
+  ['Wheel Type','Shock Lock Wheels','Double Wheels','Double Wheels'],
+  ['TSA Lock','✓ Integrated','✓ Integrated','✓ Integrated'],
+  ['Warranty','10 Years','10 Years','3 Years Global'],
+  ['Weight','2.8 kg','2.2 kg','3.2 kg']
+];
+var ct=document.getElementById('cmptbl');
+cmpRows.forEach(function(r){
+  ct.innerHTML+='<tr><td style="padding:10px 13px;font-size:12px;border-bottom:.5px solid var(--bd);font-weight:500;color:var(--n)">'+r[0]+'</td>'
+    +'<td style="padding:10px 13px;font-size:12px;border-bottom:.5px solid var(--bd);background:rgba(230,48,36,.04);font-weight:500;color:var(--n)">'+r[1]+'</td>'
+    +'<td style="padding:10px 13px;font-size:12px;border-bottom:.5px solid var(--bd);color:var(--sl)">'+r[2]+'</td>'
+    +'<td style="padding:10px 13px;font-size:12px;border-bottom:.5px solid var(--bd);color:var(--sl)">'+r[3]+'</td></tr>'
+});
+
+// REVIEW SUMMARY
+var rsm=document.getElementById('revsum');
+rsm.innerHTML='<div style="flex-shrink:0;text-align:center">'
+  +'<div style="font-size:44px;font-weight:500;color:var(--n);line-height:1;letter-spacing:-.03em">4.8</div>'
+  +'<div style="color:#F5A623;font-size:13px;margin:2px 0">★★★★★</div>'
+  +'<div style="font-size:11px;color:var(--sl)">2,847 reviews</div></div>'
+  +'<div style="flex:1">'
+  +[[5,76],[4,15],[3,5],[2,2],[1,2]].map(function(b){
+    return '<div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">'
+      +'<span style="font-size:10px;color:var(--sl);width:24px">'+b[0]+'★</span>'
+      +'<div style="flex:1;height:4px;background:var(--g2);border-radius:2px;overflow:hidden">'
+      +'<div style="width:'+b[1]+'%;height:100%;background:#F5A623;border-radius:2px"></div></div>'
+      +'<span style="font-size:10px;color:var(--sl);width:28px;text-align:right">'+b[1]+'%</span></div>'
+  }).join('')+'</div>'
+  +'<div style="flex-shrink:0;padding-left:18px;border-left:.5px solid var(--bd)">'
+  +'<div style="font-size:11.5px;font-weight:500;color:var(--n);margin-bottom:6px">Customers love:</div>'
+  +['Wheel quality (96%)','Durability (94%)','Value for money (91%)','Easy to pack (89%)'].map(function(l){
+    return '<div style="font-size:11px;color:var(--sl);margin-bottom:3px">✓ '+l+'</div>'
+  }).join('')+'</div>';
+
+var revItems=[
+  {nm:'Priya Mehta',city:'Mumbai',dt:'Jan 2025',tx:'Absolutely love this bag. Travelled to 6 countries and it\'s still perfect. The wheels are insanely smooth, even on cobblestones in Prague.',prd:'Polaris 55cm · Midnight Navy'},
+  {nm:'Arjun Nair',city:'Bangalore',dt:'Dec 2024',tx:'Fit everything for a 5-day Thailand trip including check-in. The compression strap is genius — got an extra 20% packing space.',prd:'Polaris 55cm · Racing Red'},
+  {nm:'Sneha Kapoor',city:'Delhi',dt:'Nov 2024',tx:'Really good quality for the price. Would give 5 stars but the zipper felt stiff initially. After a month of use, completely smooth now.',prd:'Polaris 55cm · Stealth Black'},
+  {nm:'Vikram Iyer',city:'Chennai',dt:'Oct 2024',tx:'The 10-year warranty is the real deal. Had a small wheel issue, called AT support. They sent a technician home within 48 hours. Blown away.',prd:'Polaris 55cm · Midnight Navy'}
+];
+var rl=document.getElementById('rl');
+revItems.forEach(function(rv){
+  rl.innerHTML+='<div style="background:#fff;border:.5px solid var(--bd);border-radius:12px;padding:14px">'
+    +'<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:5px">'
+    +'<div><div style="font-size:12px;font-weight:500;color:var(--n)">'+rv.nm+', '+rv.city+'</div>'
+    +'<div style="font-size:10px;color:var(--sl)">'+rv.dt+'</div></div>'
+    +'<span style="font-size:9px;background:#E5F3EC;color:#1A7A4A;padding:2px 5px;border-radius:3px">Verified</span></div>'
+    +'<div style="color:#F5A623;font-size:11px;margin-bottom:5px">★★★★★</div>'
+    +'<div style="font-size:12px;color:var(--sl);line-height:1.65">"'+rv.tx+'"</div>'
+    +'<div style="font-size:10px;color:var(--sl);margin-top:5px">🛒 '+rv.prd+'</div>'
+    +'</div>'
+});
+
+// CROSS-SELL
+document.getElementById('bndlvis').innerHTML=bag(N,44,52)+'<span style="font-size:16px;color:var(--sl)">+</span>'+bag(N,54,64);
+var xProds=[
+  {nm:'AT Travel Lock',mt:'TSA-Approved · 3-Digit',pr:'₹599',c:'#2D3748',bc:'#2D3748',bdg:'Add-on',cols:['#2D3748','#333']},
+  {nm:'Travel Pillow',mt:'Memory Foam · Packable',pr:'₹799',c:TEAL,bc:'#0E6E64',bdg:'Comfort',cols:[TEAL,'#0B1F3A']},
+  {nm:'Luggage Belt',mt:'Universal Fit · Secure',pr:'₹399',c:BURG,bc:'#8B1A32',bdg:'Security',cols:[BURG,R]},
+  {nm:'Bag Tag Set (3)',mt:'Leather Look · Durable',pr:'₹299',c:PUR,bc:'#4A2A7A',bdg:'Essential',cols:[PUR,N]}
+];
+updatePdpSelection();
+renderCart();
+var xsg=document.getElementById('xsg');
+xProds.forEach(function(p){xsg.innerHTML+=makeCard(p,null)});
+
+// CHECKOUT IMAGE
+document.getElementById('ckimg').innerHTML=bag(N,44,52);
+
+// INTERACTIONS
+function selDl(el){
+  document.querySelectorAll('.dlopt').forEach(function(d){d.classList.remove('on')});
+  el.classList.add('on');
+}
+function selPm(el){
+  document.querySelectorAll('.pm').forEach(function(p){p.classList.remove('on')});
+  el.classList.add('on');
+}
+</script>
+</html>
